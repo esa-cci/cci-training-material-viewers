@@ -1,0 +1,554 @@
+<div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body[data-theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-index-name div,
+.xr-index-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2,
+.xr-no-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt; Size: 41kB
+Dimensions:     (lat: 101, lon: 100, time: 1)
+Coordinates:
+  * lat         (lat) float32 404B 52.51 52.51 52.53 52.53 ... 53.48 53.49 53.51
+  * lon         (lon) float32 400B -1.495 -1.485 -1.475 ... -0.525 -0.515 -0.505
+  * time        (time) datetime64[ns] 8B 2015-07-03
+Data variables:
+    lccs_class  (time, lat, lon) float32 40kB dask.array&lt;chunksize=(1, 101, 100), meta=np.ndarray&gt;
+Attributes: (12/40)
+    Conventions:                CF-1.6
+    TileSize:                   2048:2048
+    catalogue_url:              https://catalogue.ceda.ac.uk/uuid/b382ebe6679...
+    cdm_data_type:              grid
+    comment:                    
+    contact:                    landcover-cci@uclouvain.be
+    ...                         ...
+    time_coverage_start:        2015-07-03T00:00:00
+    title:                      ESA CCI Land Cover Map
+    tracking_id:                12590bad-9014-4a91-9048-d06b67965490
+    type:                       ESACCI-LC-L4-LCCS-Map-300m-P1Y
+    geospatial_bounds_crs:      CRS84
+    geospatial_bounds:          POLYGON((-1.4999972581863403 52.5000038146972...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-819a0f21-8bad-4fae-b4d8-041b322111fb' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-819a0f21-8bad-4fae-b4d8-041b322111fb' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>lat</span>: 101</li><li><span class='xr-has-index'>lon</span>: 100</li><li><span class='xr-has-index'>time</span>: 1</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-0392c221-3b54-401d-9920-d93f7a4ffadd' class='xr-section-summary-in' type='checkbox'  checked><label for='section-0392c221-3b54-401d-9920-d93f7a4ffadd' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>52.51 52.51 52.53 ... 53.49 53.51</div><input id='attrs-1c3ddba4-f880-4d6f-a671-361bece29626' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1c3ddba4-f880-4d6f-a671-361bece29626' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-90446a8e-c2d8-496c-8c65-834177a3f949' class='xr-var-data-in' type='checkbox'><label for='data-90446a8e-c2d8-496c-8c65-834177a3f949' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>latitude_coordinates</dd><dt><span>reference_datum :</span></dt><dd>geographical coordinates, WGS84 projection</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>valid_max :</span></dt><dd>90.0</dd><dt><span>valid_min :</span></dt><dd>-90.0</dd></dl></div><div class='xr-var-data'><pre>array([52.505   , 52.514996, 52.525005, 52.535   , 52.544994, 52.555004,
+       52.565   , 52.574993, 52.585003, 52.594997, 52.604992, 52.615   ,
+       52.624996, 52.63499 , 52.645   , 52.654995, 52.665005, 52.675   ,
+       52.684994, 52.695004, 52.704998, 52.714993, 52.725002, 52.734997,
+       52.74499 , 52.755   , 52.764996, 52.775005, 52.785   , 52.794994,
+       52.805004, 52.815   , 52.824993, 52.835003, 52.844997, 52.854992,
+       52.865   , 52.874996, 52.88499 , 52.895   , 52.904995, 52.915005,
+       52.925   , 52.934994, 52.945004, 52.954998, 52.964993, 52.975002,
+       52.984997, 52.99499 , 53.005   , 53.014996, 53.025005, 53.035   ,
+       53.044994, 53.055004, 53.065   , 53.074993, 53.085003, 53.094997,
+       53.104992, 53.115   , 53.124996, 53.13499 , 53.145   , 53.154995,
+       53.165005, 53.175   , 53.184994, 53.195004, 53.204998, 53.214993,
+       53.225002, 53.234997, 53.24499 , 53.255   , 53.264996, 53.275005,
+       53.285   , 53.294994, 53.305004, 53.315   , 53.324993, 53.335003,
+       53.344997, 53.354992, 53.365   , 53.374996, 53.38499 , 53.395   ,
+       53.404995, 53.415005, 53.425   , 53.434994, 53.445004, 53.454998,
+       53.464993, 53.475002, 53.484997, 53.49499 , 53.505   ], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-1.495 -1.485 ... -0.515 -0.505</div><input id='attrs-a3524e58-e4b9-4253-96a4-7936e0d29a43' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a3524e58-e4b9-4253-96a4-7936e0d29a43' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-23779c8a-fbda-4b81-a46f-2b5bfd360cac' class='xr-var-data-in' type='checkbox'><label for='data-23779c8a-fbda-4b81-a46f-2b5bfd360cac' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>longitude_coordinates</dd><dt><span>reference_datum :</span></dt><dd>geographical coordinates, WGS84 projection</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>valid_max :</span></dt><dd>180.0</dd><dt><span>valid_min :</span></dt><dd>-180.0</dd></dl></div><div class='xr-var-data'><pre>array([-1.495   , -1.485005, -1.475011, -1.465001, -1.455007, -1.444997,
+       -1.435002, -1.425008, -1.414998, -1.405004, -1.395009, -1.384999,
+       -1.375005, -1.36501 , -1.355001, -1.345006, -1.335012, -1.325002,
+       -1.315007, -1.304998, -1.295003, -1.285009, -1.274999, -1.265004,
+       -1.25501 , -1.245   , -1.235005, -1.225011, -1.215001, -1.205007,
+       -1.194997, -1.185002, -1.175008, -1.164998, -1.155004, -1.145009,
+       -1.134999, -1.125005, -1.11501 , -1.105001, -1.095006, -1.085012,
+       -1.075002, -1.065007, -1.054998, -1.045003, -1.035009, -1.024999,
+       -1.015004, -1.00501 , -0.995   , -0.985005, -0.975011, -0.965001,
+       -0.955007, -0.944997, -0.935002, -0.925008, -0.914998, -0.905004,
+       -0.895009, -0.884999, -0.875005, -0.86501 , -0.855001, -0.845006,
+       -0.835012, -0.825002, -0.815007, -0.804998, -0.795003, -0.785009,
+       -0.774999, -0.765004, -0.75501 , -0.745   , -0.735005, -0.725011,
+       -0.715001, -0.705007, -0.694997, -0.685002, -0.675008, -0.664998,
+       -0.655004, -0.645009, -0.634999, -0.625005, -0.61501 , -0.605001,
+       -0.595006, -0.585012, -0.575002, -0.565007, -0.554998, -0.545003,
+       -0.535009, -0.524999, -0.515004, -0.50501 ], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2015-07-03</div><input id='attrs-a4976b14-00d9-4721-973e-b0afca60ab43' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-a4976b14-00d9-4721-973e-b0afca60ab43' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-94e6bbf8-ca31-4466-9317-7fae50fbbd90' class='xr-var-data-in' type='checkbox'><label for='data-94e6bbf8-ca31-4466-9317-7fae50fbbd90' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2015-07-03T00:00:00.000000000&#x27;], dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-92e72151-33d5-4f62-a4a8-4b5d14699070' class='xr-section-summary-in' type='checkbox'  checked><label for='section-92e72151-33d5-4f62-a4a8-4b5d14699070' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>lccs_class</span></div><div class='xr-var-dims'>(time, lat, lon)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1, 101, 100), meta=np.ndarray&gt;</div><input id='attrs-8eee93df-8980-4c3e-976c-8fe6ee01c303' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8eee93df-8980-4c3e-976c-8fe6ee01c303' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0014dc41-9a84-496f-99c3-b4587cd28a09' class='xr-var-data-in' type='checkbox'><label for='data-0014dc41-9a84-496f-99c3-b4587cd28a09' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>ancillary_variables :</span></dt><dd>processed_flag current_pixel_state observation_count change_count</dd><dt><span>flag_meanings :</span></dt><dd>no_data cropland_rainfed cropland_rainfed_herbaceous_cover cropland_rainfed_tree_or_shrub_cover cropland_irrigated mosaic_cropland mosaic_natural_vegetation tree_broadleaved_evergreen_closed_to_open tree_broadleaved_deciduous_closed_to_open tree_broadleaved_deciduous_closed tree_broadleaved_deciduous_open tree_needleleaved_evergreen_closed_to_open tree_needleleaved_evergreen_closed tree_needleleaved_evergreen_open tree_needleleaved_deciduous_closed_to_open tree_needleleaved_deciduous_closed tree_needleleaved_deciduous_open tree_mixed mosaic_tree_and_shrub mosaic_herbaceous shrubland shrubland_evergreen shrubland_deciduous grassland lichens_and_mosses sparse_vegetation sparse_tree sparse_shrub sparse_herbaceous tree_cover_flooded_fresh_or_brakish_water tree_cover_flooded_saline_water shrub_or_herbaceous_cover_flooded urban bare_areas bare_areas_consolidated bare_areas_unconsolidated water snow_and_ice</dd><dt><span>flag_values :</span></dt><dd>[0, 10, 11, 12, 20, 30, 40, 50, 60, 61, 62, 70, 71, 72, 80, 81, 82, 90, 100, 110, 120, 121, 122, -126, -116, -106, -105, -104, -103, -96, -86, -76, -66, -56, -55, -54, -46, -36]</dd><dt><span>long_name :</span></dt><dd>Land cover class defined in LCCS</dd><dt><span>standard_name :</span></dt><dd>land_cover_lccs</dd><dt><span>valid_max :</span></dt><dd>220</dd><dt><span>valid_min :</span></dt><dd>1</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 39.45 kiB </td>
+                        <td> 39.45 kiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (1, 101, 100) </td>
+                        <td> (1, 101, 100) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 1 graph layer </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="193" height="184" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="10" y1="0" x2="24" y2="14" style="stroke-width:2" />
+  <line x1="10" y1="120" x2="24" y2="134" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="10" y1="0" x2="10" y2="120" style="stroke-width:2" />
+  <line x1="24" y1="14" x2="24" y2="134" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="10.0,0.0 24.9485979497544,14.948597949754403 24.9485979497544,134.9485979497544 10.0,120.0" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="10" y1="0" x2="128" y2="0" style="stroke-width:2" />
+  <line x1="24" y1="14" x2="143" y2="14" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="10" y1="0" x2="24" y2="14" style="stroke-width:2" />
+  <line x1="128" y1="0" x2="143" y2="14" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="10.0,0.0 128.81188118811883,0.0 143.76047913787323,14.948597949754403 24.9485979497544,14.948597949754403" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="24" y1="14" x2="143" y2="14" style="stroke-width:2" />
+  <line x1="24" y1="134" x2="143" y2="134" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="24" y1="14" x2="24" y2="134" style="stroke-width:2" />
+  <line x1="143" y1="14" x2="143" y2="134" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="24.9485979497544,14.948597949754403 143.76047913787323,14.948597949754403 143.76047913787323,134.9485979497544 24.9485979497544,134.9485979497544" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="84.354539" y="154.948598" font-size="1.0rem" font-weight="100" text-anchor="middle" >100</text>
+  <text x="163.760479" y="74.948598" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,163.760479,74.948598)">101</text>
+  <text x="7.474299" y="147.474299" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,7.474299,147.474299)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-d373162f-6ec7-4706-9e96-1a7cb24445f6' class='xr-section-summary-in' type='checkbox'  ><label for='section-d373162f-6ec7-4706-9e96-1a7cb24445f6' class='xr-section-summary' >Indexes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>lat</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-d8612bde-d3c5-4d53-93f3-9ae460a68fc2' class='xr-index-data-in' type='checkbox'/><label for='index-d8612bde-d3c5-4d53-93f3-9ae460a68fc2' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([52.505001068115234,  52.51499557495117,  52.52500534057617,
+        52.53499984741211,  52.54499435424805,  52.55500411987305,
+       52.564998626708984,  52.57499313354492,  52.58500289916992,
+        52.59499740600586,
+       ...
+        53.41500473022461,  53.42499923706055, 53.434993743896484,
+       53.445003509521484,  53.45499801635742,  53.46499252319336,
+        53.47500228881836,   53.4849967956543, 53.494991302490234,
+       53.505001068115234],
+      dtype=&#x27;float32&#x27;, name=&#x27;lat&#x27;, length=101))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>lon</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-c4fedf09-e35b-47eb-9043-ae156ee886e8' class='xr-index-data-in' type='checkbox'/><label for='index-c4fedf09-e35b-47eb-9043-ae156ee886e8' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([-1.4950000047683716,  -1.485005497932434, -1.4750109910964966,
+       -1.4650012254714966,  -1.455006718635559,  -1.444996953010559,
+       -1.4350024461746216,  -1.425007939338684,  -1.414998173713684,
+       -1.4050036668777466,  -1.395009160041809,  -1.384999394416809,
+       -1.3750048875808716,  -1.365010380744934,  -1.355000615119934,
+       -1.3450061082839966,  -1.335011601448059,  -1.325001835823059,
+       -1.3150073289871216, -1.3049975633621216,  -1.295003056526184,
+       -1.2850085496902466, -1.2749987840652466,  -1.265004277229309,
+       -1.2550097703933716, -1.2450000047683716,  -1.235005497932434,
+       -1.2250109910964966, -1.2150012254714966,  -1.205006718635559,
+        -1.194996953010559, -1.1850024461746216,  -1.175007939338684,
+        -1.164998173713684, -1.1550036668777466,  -1.145009160041809,
+        -1.134999394416809, -1.1250048875808716,  -1.115010380744934,
+        -1.105000615119934, -1.0950061082839966,  -1.085011601448059,
+        -1.075001835823059, -1.0650073289871216, -1.0549975633621216,
+        -1.045003056526184, -1.0350085496902466, -1.0249987840652466,
+        -1.015004277229309, -1.0050097703933716, -0.9950000047683716,
+       -0.9850054979324341, -0.9750109910964966, -0.9650012254714966,
+       -0.9550067186355591, -0.9449969530105591, -0.9350024461746216,
+       -0.9250079393386841, -0.9149981737136841, -0.9050036668777466,
+       -0.8950091600418091, -0.8849993944168091, -0.8750048875808716,
+       -0.8650103807449341, -0.8550006151199341, -0.8450061082839966,
+       -0.8350116014480591, -0.8250018358230591, -0.8150073289871216,
+       -0.8049975633621216, -0.7950030565261841, -0.7850085496902466,
+       -0.7749987840652466, -0.7650042772293091, -0.7550097703933716,
+       -0.7450000047683716, -0.7350054979324341, -0.7250109910964966,
+       -0.7150012254714966, -0.7050067186355591, -0.6949969530105591,
+       -0.6850024461746216, -0.6750079393386841, -0.6649981737136841,
+       -0.6550036668777466, -0.6450091600418091, -0.6349993944168091,
+       -0.6250048875808716, -0.6150103807449341, -0.6050006151199341,
+       -0.5950061082839966, -0.5850116014480591, -0.5750018358230591,
+       -0.5650073289871216, -0.5549975633621216, -0.5450030565261841,
+       -0.5350085496902466, -0.5249987840652466, -0.5150042772293091,
+       -0.5050097703933716],
+      dtype=&#x27;float32&#x27;, name=&#x27;lon&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-a5b07d86-72b6-412b-9379-c3788a12b671' class='xr-index-data-in' type='checkbox'/><label for='index-a5b07d86-72b6-412b-9379-c3788a12b671' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;2015-07-03&#x27;], dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, freq=None))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-8348e1b1-2ce5-48b7-a4af-acc95d3e565f' class='xr-section-summary-in' type='checkbox'  ><label for='section-8348e1b1-2ce5-48b7-a4af-acc95d3e565f' class='xr-section-summary' >Attributes: <span>(40)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>TileSize :</span></dt><dd>2048:2048</dd><dt><span>catalogue_url :</span></dt><dd>https://catalogue.ceda.ac.uk/uuid/b382ebe6679d44b8b0e68ea4ef4b701c</dd><dt><span>cdm_data_type :</span></dt><dd>grid</dd><dt><span>comment :</span></dt><dd></dd><dt><span>contact :</span></dt><dd>landcover-cci@uclouvain.be</dd><dt><span>creator_email :</span></dt><dd>landcover-cci@uclouvain.be</dd><dt><span>creator_name :</span></dt><dd>University catholique de Louvain</dd><dt><span>creator_url :</span></dt><dd>http://www.uclouvain.be/</dd><dt><span>crs :</span></dt><dd>1178880137</dd><dt><span>date_created :</span></dt><dd>20170615T163947Z</dd><dt><span>geospatial_lat_max :</span></dt><dd>53.5099983215332</dd><dt><span>geospatial_lat_min :</span></dt><dd>52.500003814697266</dd><dt><span>geospatial_lat_resolution :</span></dt><dd>0.0099945068359375</dd><dt><span>geospatial_lat_units :</span></dt><dd>degrees_north</dd><dt><span>geospatial_lon_max :</span></dt><dd>-0.5000125169754028</dd><dt><span>geospatial_lon_min :</span></dt><dd>-1.4999972581863403</dd><dt><span>geospatial_lon_resolution :</span></dt><dd>0.0099945068359375</dd><dt><span>geospatial_lon_units :</span></dt><dd>degrees_east</dd><dt><span>history :</span></dt><dd>amorgos-4,0, lc-sdr-1.0, lc-sr-1.0, lc-classification-1.0,lc-user-tools-3.13
+Modified with the ESA Climate Toolbox v1.3 esa_climate_toolbox.ops.subset.subset_temporal v1.0 
+Default input values: OrderedDict({&#x27;ds&#x27;: {&#x27;position&#x27;: 0, &#x27;data_type&#x27;: &lt;class &#x27;esa_climate_toolbox.core.types.DatasetLike&#x27;&gt;, &#x27;description&#x27;: &#x27;Dataset or dataframe to subset&#x27;}, &#x27;time_range&#x27;: {&#x27;position&#x27;: 1, &#x27;data_type&#x27;: &lt;class &#x27;esa_climate_toolbox.core.types.TimeRangeLike&#x27;&gt;, &#x27;description&#x27;: &#x27;Time range to select&#x27;}})
+Provided input values: {&#x27;ds&#x27;: &lt;class &#x27;xarray.core.dataset.Dataset&#x27;&gt;, &#x27;time_range&#x27;: [&#x27;2015-07-03&#x27;, &#x27;2015-07-03&#x27;]}
+
+Modified with the ESA Climate Toolbox v1.3 esa_climate_toolbox.ops.select.select_var v1.0 
+Default input values: OrderedDict({&#x27;ds&#x27;: {&#x27;position&#x27;: 0, &#x27;data_type&#x27;: &lt;class &#x27;esa_climate_toolbox.core.types.DatasetLike&#x27;&gt;, &#x27;description&#x27;: &#x27;The dataset or dataframe from which to perform selection.&#x27;}, &#x27;var&#x27;: {&#x27;position&#x27;: 1, &#x27;default_value&#x27;: None, &#x27;nullable&#x27;: True, &#x27;data_type&#x27;: &lt;class &#x27;esa_climate_toolbox.core.types.VarNamesLike&#x27;&gt;, &#x27;description&#x27;: &quot;One or more variable names to select and preserve in the dataset. All of these are valid &#x27;var_name&#x27; &#x27;var_name1,var_name2,var_name3&#x27; [&#x27;var_name1&#x27;, &#x27;var_name2&#x27;]. One can also use wildcards when doing the selection. E.g., choosing &#x27;var_name*&#x27; for selection will select all variables that start with &#x27;var_name&#x27;. This can be used to select variables along with their auxiliary variables, to select all uncertainty variables, and so on.&quot;, &#x27;value_set_source&#x27;: &#x27;ds&#x27;}})
+Provided input values: {&#x27;ds&#x27;: &lt;class &#x27;xarray.core.dataset.Dataset&#x27;&gt;, &#x27;var&#x27;: &#x27;lccs_class&#x27;}
+
+Modified with the ESA Climate Toolbox v1.3 esa_climate_toolbox.ops.normalize.normalize v1.0 
+Default input values: OrderedDict({&#x27;ds&#x27;: {&#x27;position&#x27;: 0, &#x27;data_type&#x27;: &lt;class &#x27;xarray.core.dataset.Dataset&#x27;&gt;, &#x27;description&#x27;: &#x27;The dataset to normalize.&#x27;}})
+Provided input values: {&#x27;ds&#x27;: &lt;class &#x27;xarray.core.dataset.Dataset&#x27;&gt;}
+
+Modified with the ESA Climate Toolbox v1.3 esa_climate_toolbox.ops.coregistration.coregister v1.1 
+Default input values: OrderedDict({&#x27;ds_primary&#x27;: {&#x27;position&#x27;: 0, &#x27;data_type&#x27;: &lt;class &#x27;xarray.core.dataset.Dataset&#x27;&gt;, &#x27;description&#x27;: &#x27;The dataset whose grid is used for resampling&#x27;}, &#x27;ds_replica&#x27;: {&#x27;position&#x27;: 1, &#x27;data_type&#x27;: &lt;class &#x27;xarray.core.dataset.Dataset&#x27;&gt;, &#x27;description&#x27;: &#x27;The dataset that will be resampled&#x27;}, &#x27;method_us&#x27;: {&#x27;position&#x27;: 2, &#x27;default_value&#x27;: &#x27;linear&#x27;, &#x27;data_type&#x27;: &lt;class &#x27;str&#x27;&gt;, &#x27;description&#x27;: &#x27;Interpolation method to use for upsampling.&#x27;, &#x27;value_set&#x27;: [&#x27;nearest&#x27;, &#x27;linear&#x27;]}, &#x27;method_ds&#x27;: {&#x27;position&#x27;: 3, &#x27;default_value&#x27;: &#x27;mean&#x27;, &#x27;data_type&#x27;: &lt;class &#x27;str&#x27;&gt;, &#x27;description&#x27;: &#x27;Interpolation method to use for downsampling.&#x27;, &#x27;value_set&#x27;: [&#x27;first&#x27;, &#x27;last&#x27;, &#x27;mean&#x27;, &#x27;mode&#x27;, &#x27;var&#x27;, &#x27;std&#x27;]}})
+Provided input values: {&#x27;ds_primary&#x27;: &lt;class &#x27;xarray.core.dataset.Dataset&#x27;&gt;, &#x27;ds_replica&#x27;: &lt;class &#x27;xarray.core.dataset.Dataset&#x27;&gt;, &#x27;method_ds&#x27;: &#x27;mode&#x27;, &#x27;method_us&#x27;: &#x27;linear&#x27;, &#x27;monitor&#x27;: Monitor.NONE}
+</dd><dt><span>id :</span></dt><dd>ESACCI-LC-L4-LCCS-Map-300m-P1Y-2015-v2.0.7</dd><dt><span>institution :</span></dt><dd>Universite catholique de Louvain</dd><dt><span>keywords :</span></dt><dd>land cover classification,satellite,observation</dd><dt><span>keywords_vocabulary :</span></dt><dd>NASA Global Change Master Directory (GCMD) Science Keywords</dd><dt><span>license :</span></dt><dd>ESA CCI Data Policy: free and open access</dd><dt><span>naming_authority :</span></dt><dd>org.esa-cci</dd><dt><span>product_version :</span></dt><dd>2.0.7</dd><dt><span>project :</span></dt><dd>Climate Change Initiative - European Space Agency</dd><dt><span>references :</span></dt><dd>http://www.esa-landcover-cci.org/</dd><dt><span>source :</span></dt><dd>MERIS FR L1B version 5.05, MERIS RR L1B version 8.0, SPOT VGT P</dd><dt><span>spatial_resolution :</span></dt><dd>300m</dd><dt><span>standard_name_vocabulary :</span></dt><dd>NetCDF Climate and Forecast (CF) Standard Names version 21</dd><dt><span>summary :</span></dt><dd>This dataset contains the global ESA CCI land cover classification map derived from satellite data of one epoch.</dd><dt><span>time_coverage_end :</span></dt><dd>2015-07-03T00:00:00</dd><dt><span>time_coverage_start :</span></dt><dd>2015-07-03T00:00:00</dd><dt><span>title :</span></dt><dd>ESA CCI Land Cover Map</dd><dt><span>tracking_id :</span></dt><dd>12590bad-9014-4a91-9048-d06b67965490</dd><dt><span>type :</span></dt><dd>ESACCI-LC-L4-LCCS-Map-300m-P1Y</dd><dt><span>geospatial_bounds_crs :</span></dt><dd>CRS84</dd><dt><span>geospatial_bounds :</span></dt><dd>POLYGON((-1.4999972581863403 52.500003814697266, -1.4999972581863403 53.5099983215332, -0.5000125169754028 53.5099983215332, -0.5000125169754028 52.500003814697266, -1.4999972581863403 52.500003814697266))</dd></dl></div></li></ul></div></div>

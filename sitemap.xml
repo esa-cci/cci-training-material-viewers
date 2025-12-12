@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://localhost:3000/sitemap_style.xsl" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://localhost:3000</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/external-notebooks/esa-cci/ect-training/readme</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/external-notebooks/esa-cci/ect-training/adaptation-futures-nz-10-2025/adaptation-futures-climate-risk-exposure-10-2025</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/external-notebooks/esa-cci/ect-training/adaptation-futures-nz-10-2025/readme</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/external-notebooks/esa-cci/ect-training/esa-climate-change-competition/competition-forests-in-a-changing-climate</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/external-notebooks/esa-cci/ect-training/lps-vienna-06-2025/lps-beginner</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/external-notebooks/esa-cci/ect-training/lps-vienna-06-2025/lps-cloud-uncertainties</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/external-notebooks/esa-cci/ect-training/lps-vienna-06-2025/lps-intermediate-level-elnino</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/external-notebooks/esa-cci/ect-training/lst-leicester-12-2024/lst-training</loc>
+  </url>
+</urlset>

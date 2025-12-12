@@ -1,0 +1,1208 @@
+<div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme="dark"],
+html[data-theme="dark"],
+body[data-theme="dark"],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1f1f1f;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 0 20px 0 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: inline-block;
+  opacity: 0;
+  height: 0;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:focus + label {
+  border: 2px solid var(--xr-font-color0);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: "►";
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: "▼";
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: "(";
+}
+
+.xr-dim-list:after {
+  content: ")";
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ",";
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-index-name div,
+.xr-index-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2,
+.xr-no-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt; Size: 4TB
+Dimensions:             (time: 12784, lat: 720, lon: 1440, fields: 16,
+                         field_name_length: 50, fieldsp1: 17)
+Coordinates:
+  * field_name_length   (field_name_length) int32 200B 1 2 3 4 5 ... 47 48 49 50
+  * fields              (fields) int32 64B 1 2 3 4 5 6 7 ... 11 12 13 14 15 16
+  * fieldsp1            (fieldsp1) int32 68B 1 2 3 4 5 6 7 ... 12 13 14 15 16 17
+  * lat                 (lat) float32 3kB -89.88 -89.62 -89.38 ... 89.62 89.88
+  * lon                 (lon) float32 6kB -179.9 -179.6 -179.4 ... 179.6 179.9
+  * time                (time) datetime64[ns] 102kB 1982-01-01T12:00:00 ... 2...
+Data variables:
+    analysed_sst        (time, lat, lon) float64 106GB dask.array&lt;chunksize=(16, 720, 720), meta=np.ndarray&gt;
+    analysis_number     (time, lat, lon) float64 106GB dask.array&lt;chunksize=(16, 720, 720), meta=np.ndarray&gt;
+    anomaly_fields      (time, fields, lat, lon) float64 2TB dask.array&lt;chunksize=(16, 16, 720, 720), meta=np.ndarray&gt;
+    field_name          (fields, field_name_length) |S1 800B dask.array&lt;chunksize=(16, 50), meta=np.ndarray&gt;
+    gradient_fields     (time, fieldsp1, lat, lon) float64 2TB dask.array&lt;chunksize=(16, 17, 720, 720), meta=np.ndarray&gt;
+    median_type         (time, lat, lon) float64 106GB dask.array&lt;chunksize=(16, 720, 720), meta=np.ndarray&gt;
+    standard_deviation  (time, lat, lon) float64 106GB dask.array&lt;chunksize=(16, 720, 720), meta=np.ndarray&gt;
+Attributes: (12/47)
+    Conventions:                CF-1.4
+    acknowledgment:             Funded by ESA
+    cdm_data_type:              grid
+    comment:                    
+    creator_email:              science.leader@esa-sst-cci.org
+    creator_name:               SST_cci
+    ...                         ...
+    summary:                    An ensemble product with input from a number ...
+    time_coverage_end:          20170101T000000Z
+    time_coverage_start:        20161231T000000Z
+    title:                      Global SST Ensemble, L4 GMPE
+    uuid:                       dc0c5b25-93bf-4943-aba1-7f0de9109620
+    westernmost_longitude:      -180.0</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-0fb4251d-eaa6-4059-b8d7-816d8af42f37' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-0fb4251d-eaa6-4059-b8d7-816d8af42f37' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 12784</li><li><span class='xr-has-index'>lat</span>: 720</li><li><span class='xr-has-index'>lon</span>: 1440</li><li><span class='xr-has-index'>fields</span>: 16</li><li><span class='xr-has-index'>field_name_length</span>: 50</li><li><span class='xr-has-index'>fieldsp1</span>: 17</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-3ef5dc6e-474b-4d77-92aa-feaea862981c' class='xr-section-summary-in' type='checkbox'  checked><label for='section-3ef5dc6e-474b-4d77-92aa-feaea862981c' class='xr-section-summary' >Coordinates: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>field_name_length</span></div><div class='xr-var-dims'>(field_name_length)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>1 2 3 4 5 6 7 ... 45 46 47 48 49 50</div><input id='attrs-2e841b05-2995-461a-aa75-eb2f5188ada9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2e841b05-2995-461a-aa75-eb2f5188ada9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-df866f91-f40d-431c-919f-a958b1177853' class='xr-var-data-in' type='checkbox'><label for='data-df866f91-f40d-431c-919f-a958b1177853' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Length of string array for names of inputs</dd></dl></div><div class='xr-var-data'><pre>array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+       19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36,
+       37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50], dtype=int32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>fields</span></div><div class='xr-var-dims'>(fields)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>1 2 3 4 5 6 7 ... 11 12 13 14 15 16</div><input id='attrs-0175537c-df23-4fea-b79e-b3b04e75e1e2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0175537c-df23-4fea-b79e-b3b04e75e1e2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0821166a-b3fa-4688-aa70-f699ca69114d' class='xr-var-data-in' type='checkbox'><label for='data-0821166a-b3fa-4688-aa70-f699ca69114d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Fields number</dd></dl></div><div class='xr-var-data'><pre>array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16],
+      dtype=int32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>fieldsp1</span></div><div class='xr-var-dims'>(fieldsp1)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>1 2 3 4 5 6 7 ... 12 13 14 15 16 17</div><input id='attrs-73b5d2ce-5287-44e0-86b1-39ee8410d163' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-73b5d2ce-5287-44e0-86b1-39ee8410d163' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-cd5bef75-3b3a-4bbd-9ac9-a0d5431cfa41' class='xr-var-data-in' type='checkbox'><label for='data-cd5bef75-3b3a-4bbd-9ac9-a0d5431cfa41' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Fields number plus one</dd></dl></div><div class='xr-var-data'><pre>array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17],
+      dtype=int32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-89.88 -89.62 ... 89.62 89.88</div><input id='attrs-c97b8c65-f06f-41bb-8406-ae8f240e4185' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c97b8c65-f06f-41bb-8406-ae8f240e4185' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-676c3484-7673-4360-b358-830d83f1b09e' class='xr-var-data-in' type='checkbox'><label for='data-676c3484-7673-4360-b358-830d83f1b09e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>Y</dd><dt><span>reference_datum :</span></dt><dd>geographical coordinates, WGS84 projection</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>valid_max :</span></dt><dd>90.0</dd><dt><span>valid_min :</span></dt><dd>-90.0</dd></dl></div><div class='xr-var-data'><pre>array([-89.875, -89.625, -89.375, ...,  89.375,  89.625,  89.875],
+      shape=(720,), dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-179.9 -179.6 ... 179.6 179.9</div><input id='attrs-fde31b35-254f-4740-889d-de00b26225d1' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-fde31b35-254f-4740-889d-de00b26225d1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-dcc0f864-2eb5-49dd-a1d7-e0c0722172d6' class='xr-var-data-in' type='checkbox'><label for='data-dcc0f864-2eb5-49dd-a1d7-e0c0722172d6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>X</dd><dt><span>reference_datum :</span></dt><dd>geographical coordinates, WGS84 projection</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>valid_max :</span></dt><dd>180.0</dd><dt><span>valid_min :</span></dt><dd>-180.0</dd></dl></div><div class='xr-var-data'><pre>array([-179.875, -179.625, -179.375, ...,  179.375,  179.625,  179.875],
+      shape=(1440,), dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>1982-01-01T12:00:00 ... 2016-12-...</div><input id='attrs-914030fa-430a-4b40-a56d-0a57ca1e2371' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-914030fa-430a-4b40-a56d-0a57ca1e2371' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1443bbbf-6315-476d-a0d1-44e90b67b1b7' class='xr-var-data-in' type='checkbox'><label for='data-1443bbbf-6315-476d-a0d1-44e90b67b1b7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>T</dd><dt><span>long_name :</span></dt><dd>reference time of sst field</dd><dt><span>standard_name :</span></dt><dd>time</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;1982-01-01T12:00:00.000000000&#x27;, &#x27;1982-01-02T12:00:00.000000000&#x27;,
+       &#x27;1982-01-03T12:00:00.000000000&#x27;, ..., &#x27;2016-12-29T12:00:00.000000000&#x27;,
+       &#x27;2016-12-30T12:00:00.000000000&#x27;, &#x27;2016-12-31T12:00:00.000000000&#x27;],
+      shape=(12784,), dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-4236ab3c-b822-443c-845a-4bfb02f09fb7' class='xr-section-summary-in' type='checkbox'  checked><label for='section-4236ab3c-b822-443c-845a-4bfb02f09fb7' class='xr-section-summary' >Data variables: <span>(7)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>analysed_sst</span></div><div class='xr-var-dims'>(time, lat, lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(16, 720, 720), meta=np.ndarray&gt;</div><input id='attrs-314abf4e-59a6-43a6-bfd0-b9b154c50bb0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-314abf4e-59a6-43a6-bfd0-b9b154c50bb0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9f7df024-e934-4880-ab0c-141ae54cfb0c' class='xr-var-data-in' type='checkbox'><label for='data-9f7df024-e934-4880-ab0c-141ae54cfb0c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>median SST from GMPE</dd><dt><span>source :</span></dt><dd>SST CCI V2, SST CCI V1.1, MyOcean, AVHRR_OI, CMC, HadISST.2.2.0.0_r0, HadISST.2.2.0.0_r1, HadISST.2.2.0.0_r2, HadISST.2.2.0.0_r3, HadISST.2.2.0.0_r4, HadISST.2.2.0.0_r5, HadISST.2.2.0.0_r6, HadISST.2.2.0.0_r7, HadISST.2.2.0.0_r8, HadISST.2.2.0.0_r9, MGDSST</dd><dt><span>standard_name :</span></dt><dd>sea_surface_foundation_temperature</dd><dt><span>units :</span></dt><dd>kelvin</dd><dt><span>valid_max :</span></dt><dd>4500</dd><dt><span>valid_min :</span></dt><dd>-300</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 98.75 GiB </td>
+                        <td> 63.28 MiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (12784, 720, 1440) </td>
+                        <td> (16, 720, 720) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1598 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float64 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="169" height="155" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="10" y1="0" x2="80" y2="70" style="stroke-width:2" />
+  <line x1="10" y1="35" x2="80" y2="105" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="10" y1="0" x2="10" y2="35" style="stroke-width:2" />
+  <line x1="13" y1="3" x2="13" y2="38" />
+  <line x1="17" y1="7" x2="17" y2="42" />
+  <line x1="21" y1="11" x2="21" y2="46" />
+  <line x1="24" y1="14" x2="24" y2="50" />
+  <line x1="28" y1="18" x2="28" y2="53" />
+  <line x1="32" y1="22" x2="32" y2="57" />
+  <line x1="35" y1="25" x2="35" y2="61" />
+  <line x1="39" y1="29" x2="39" y2="64" />
+  <line x1="43" y1="33" x2="43" y2="68" />
+  <line x1="47" y1="37" x2="47" y2="72" />
+  <line x1="50" y1="40" x2="50" y2="76" />
+  <line x1="54" y1="44" x2="54" y2="79" />
+  <line x1="58" y1="48" x2="58" y2="83" />
+  <line x1="61" y1="51" x2="61" y2="87" />
+  <line x1="65" y1="55" x2="65" y2="90" />
+  <line x1="69" y1="59" x2="69" y2="94" />
+  <line x1="73" y1="63" x2="73" y2="98" />
+  <line x1="76" y1="66" x2="76" y2="102" />
+  <line x1="80" y1="70" x2="80" y2="105" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="10.0,0.0 80.58823529411765,70.58823529411765 80.58823529411765,105.81636061141145 10.0,35.228125317293795" style="fill:#8B4903A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="10" y1="0" x2="49" y2="0" style="stroke-width:2" />
+  <line x1="13" y1="3" x2="52" y2="3" />
+  <line x1="17" y1="7" x2="56" y2="7" />
+  <line x1="21" y1="11" x2="60" y2="11" />
+  <line x1="24" y1="14" x2="64" y2="14" />
+  <line x1="28" y1="18" x2="67" y2="18" />
+  <line x1="32" y1="22" x2="71" y2="22" />
+  <line x1="35" y1="25" x2="75" y2="25" />
+  <line x1="39" y1="29" x2="78" y2="29" />
+  <line x1="43" y1="33" x2="82" y2="33" />
+  <line x1="47" y1="37" x2="86" y2="37" />
+  <line x1="50" y1="40" x2="90" y2="40" />
+  <line x1="54" y1="44" x2="93" y2="44" />
+  <line x1="58" y1="48" x2="97" y2="48" />
+  <line x1="61" y1="51" x2="101" y2="51" />
+  <line x1="65" y1="55" x2="104" y2="55" />
+  <line x1="69" y1="59" x2="108" y2="59" />
+  <line x1="73" y1="63" x2="112" y2="63" />
+  <line x1="76" y1="66" x2="116" y2="66" />
+  <line x1="80" y1="70" x2="119" y2="70" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="10" y1="0" x2="80" y2="70" style="stroke-width:2" />
+  <line x1="29" y1="0" x2="100" y2="70" />
+  <line x1="49" y1="0" x2="119" y2="70" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="10.0,0.0 49.24565621623075,0.0 119.8338915103484,70.58823529411765 80.58823529411765,70.58823529411765" style="fill:#8B4903A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="80" y1="70" x2="119" y2="70" style="stroke-width:2" />
+  <line x1="80" y1="105" x2="119" y2="105" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="80" y1="70" x2="80" y2="105" style="stroke-width:2" />
+  <line x1="100" y1="70" x2="100" y2="105" />
+  <line x1="119" y1="70" x2="119" y2="105" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="80.58823529411765,70.58823529411765 119.8338915103484,70.58823529411765 119.8338915103484,105.81636061141145 80.58823529411765,105.81636061141145" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="100.211063" y="125.816361" font-size="1.0rem" font-weight="100" text-anchor="middle" >1440</text>
+  <text x="139.833892" y="88.202298" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,139.833892,88.202298)">720</text>
+  <text x="35.294118" y="90.522243" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,35.294118,90.522243)">12784</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>analysis_number</span></div><div class='xr-var-dims'>(time, lat, lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(16, 720, 720), meta=np.ndarray&gt;</div><input id='attrs-efde7714-04c2-4cb0-b325-97434ae48640' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-efde7714-04c2-4cb0-b325-97434ae48640' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b6b98052-dacb-459d-a2fa-18514ab7cb94' class='xr-var-data-in' type='checkbox'><label for='data-b6b98052-dacb-459d-a2fa-18514ab7cb94' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>comment :</span></dt><dd></dd><dt><span>long_name :</span></dt><dd>Number of contributing analyses</dd><dt><span>source :</span></dt><dd>SST CCI V2, SST CCI V1.1, MyOcean, AVHRR_OI, CMC, HadISST.2.2.0.0_r0, HadISST.2.2.0.0_r1, HadISST.2.2.0.0_r2, HadISST.2.2.0.0_r3, HadISST.2.2.0.0_r4, HadISST.2.2.0.0_r5, HadISST.2.2.0.0_r6, HadISST.2.2.0.0_r7, HadISST.2.2.0.0_r8, HadISST.2.2.0.0_r9, MGDSST</dd><dt><span>units :</span></dt><dd></dd><dt><span>valid_max :</span></dt><dd>127</dd><dt><span>valid_min :</span></dt><dd>-127</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 98.75 GiB </td>
+                        <td> 63.28 MiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (12784, 720, 1440) </td>
+                        <td> (16, 720, 720) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1598 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float64 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="169" height="155" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="10" y1="0" x2="80" y2="70" style="stroke-width:2" />
+  <line x1="10" y1="35" x2="80" y2="105" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="10" y1="0" x2="10" y2="35" style="stroke-width:2" />
+  <line x1="13" y1="3" x2="13" y2="38" />
+  <line x1="17" y1="7" x2="17" y2="42" />
+  <line x1="21" y1="11" x2="21" y2="46" />
+  <line x1="24" y1="14" x2="24" y2="50" />
+  <line x1="28" y1="18" x2="28" y2="53" />
+  <line x1="32" y1="22" x2="32" y2="57" />
+  <line x1="35" y1="25" x2="35" y2="61" />
+  <line x1="39" y1="29" x2="39" y2="64" />
+  <line x1="43" y1="33" x2="43" y2="68" />
+  <line x1="47" y1="37" x2="47" y2="72" />
+  <line x1="50" y1="40" x2="50" y2="76" />
+  <line x1="54" y1="44" x2="54" y2="79" />
+  <line x1="58" y1="48" x2="58" y2="83" />
+  <line x1="61" y1="51" x2="61" y2="87" />
+  <line x1="65" y1="55" x2="65" y2="90" />
+  <line x1="69" y1="59" x2="69" y2="94" />
+  <line x1="73" y1="63" x2="73" y2="98" />
+  <line x1="76" y1="66" x2="76" y2="102" />
+  <line x1="80" y1="70" x2="80" y2="105" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="10.0,0.0 80.58823529411765,70.58823529411765 80.58823529411765,105.81636061141145 10.0,35.228125317293795" style="fill:#8B4903A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="10" y1="0" x2="49" y2="0" style="stroke-width:2" />
+  <line x1="13" y1="3" x2="52" y2="3" />
+  <line x1="17" y1="7" x2="56" y2="7" />
+  <line x1="21" y1="11" x2="60" y2="11" />
+  <line x1="24" y1="14" x2="64" y2="14" />
+  <line x1="28" y1="18" x2="67" y2="18" />
+  <line x1="32" y1="22" x2="71" y2="22" />
+  <line x1="35" y1="25" x2="75" y2="25" />
+  <line x1="39" y1="29" x2="78" y2="29" />
+  <line x1="43" y1="33" x2="82" y2="33" />
+  <line x1="47" y1="37" x2="86" y2="37" />
+  <line x1="50" y1="40" x2="90" y2="40" />
+  <line x1="54" y1="44" x2="93" y2="44" />
+  <line x1="58" y1="48" x2="97" y2="48" />
+  <line x1="61" y1="51" x2="101" y2="51" />
+  <line x1="65" y1="55" x2="104" y2="55" />
+  <line x1="69" y1="59" x2="108" y2="59" />
+  <line x1="73" y1="63" x2="112" y2="63" />
+  <line x1="76" y1="66" x2="116" y2="66" />
+  <line x1="80" y1="70" x2="119" y2="70" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="10" y1="0" x2="80" y2="70" style="stroke-width:2" />
+  <line x1="29" y1="0" x2="100" y2="70" />
+  <line x1="49" y1="0" x2="119" y2="70" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="10.0,0.0 49.24565621623075,0.0 119.8338915103484,70.58823529411765 80.58823529411765,70.58823529411765" style="fill:#8B4903A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="80" y1="70" x2="119" y2="70" style="stroke-width:2" />
+  <line x1="80" y1="105" x2="119" y2="105" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="80" y1="70" x2="80" y2="105" style="stroke-width:2" />
+  <line x1="100" y1="70" x2="100" y2="105" />
+  <line x1="119" y1="70" x2="119" y2="105" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="80.58823529411765,70.58823529411765 119.8338915103484,70.58823529411765 119.8338915103484,105.81636061141145 80.58823529411765,105.81636061141145" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="100.211063" y="125.816361" font-size="1.0rem" font-weight="100" text-anchor="middle" >1440</text>
+  <text x="139.833892" y="88.202298" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,139.833892,88.202298)">720</text>
+  <text x="35.294118" y="90.522243" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,35.294118,90.522243)">12784</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>anomaly_fields</span></div><div class='xr-var-dims'>(time, fields, lat, lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(16, 16, 720, 720), meta=np.ndarray&gt;</div><input id='attrs-d38b68b2-2b57-4827-b8b0-6aed76c15798' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d38b68b2-2b57-4827-b8b0-6aed76c15798' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fbfc7dbc-4c4e-4c7a-8409-42b2e550fa2e' class='xr-var-data-in' type='checkbox'><label for='data-fbfc7dbc-4c4e-4c7a-8409-42b2e550fa2e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>comment :</span></dt><dd></dd><dt><span>long_name :</span></dt><dd>Anomaly of input analyses from the ensemble median</dd><dt><span>source :</span></dt><dd>SST CCI V2, SST CCI V1.1, MyOcean, AVHRR_OI, CMC, HadISST.2.2.0.0_r0, HadISST.2.2.0.0_r1, HadISST.2.2.0.0_r2, HadISST.2.2.0.0_r3, HadISST.2.2.0.0_r4, HadISST.2.2.0.0_r5, HadISST.2.2.0.0_r6, HadISST.2.2.0.0_r7, HadISST.2.2.0.0_r8, HadISST.2.2.0.0_r9, MGDSST</dd><dt><span>units :</span></dt><dd>kelvin</dd><dt><span>valid_max :</span></dt><dd>3000</dd><dt><span>valid_min :</span></dt><dd>-3000</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 1.54 TiB </td>
+                        <td> 0.99 GiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (12784, 16, 720, 1440) </td>
+                        <td> (16, 16, 720, 720) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1598 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float64 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="484" height="100" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="3" y1="0" x2="3" y2="25" />
+  <line x1="7" y1="0" x2="7" y2="25" />
+  <line x1="11" y1="0" x2="11" y2="25" />
+  <line x1="14" y1="0" x2="14" y2="25" />
+  <line x1="18" y1="0" x2="18" y2="25" />
+  <line x1="22" y1="0" x2="22" y2="25" />
+  <line x1="26" y1="0" x2="26" y2="25" />
+  <line x1="29" y1="0" x2="29" y2="25" />
+  <line x1="33" y1="0" x2="33" y2="25" />
+  <line x1="37" y1="0" x2="37" y2="25" />
+  <line x1="41" y1="0" x2="41" y2="25" />
+  <line x1="44" y1="0" x2="44" y2="25" />
+  <line x1="48" y1="0" x2="48" y2="25" />
+  <line x1="52" y1="0" x2="52" y2="25" />
+  <line x1="56" y1="0" x2="56" y2="25" />
+  <line x1="59" y1="0" x2="59" y2="25" />
+  <line x1="63" y1="0" x2="63" y2="25" />
+  <line x1="67" y1="0" x2="67" y2="25" />
+  <line x1="71" y1="0" x2="71" y2="25" />
+  <line x1="74" y1="0" x2="74" y2="25" />
+  <line x1="78" y1="0" x2="78" y2="25" />
+  <line x1="82" y1="0" x2="82" y2="25" />
+  <line x1="86" y1="0" x2="86" y2="25" />
+  <line x1="89" y1="0" x2="89" y2="25" />
+  <line x1="93" y1="0" x2="93" y2="25" />
+  <line x1="97" y1="0" x2="97" y2="25" />
+  <line x1="101" y1="0" x2="101" y2="25" />
+  <line x1="104" y1="0" x2="104" y2="25" />
+  <line x1="108" y1="0" x2="108" y2="25" />
+  <line x1="112" y1="0" x2="112" y2="25" />
+  <line x1="116" y1="0" x2="116" y2="25" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#8B4903A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >12784</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+
+
+  <!-- Horizontal lines -->
+  <line x1="190" y1="0" x2="204" y2="14" style="stroke-width:2" />
+  <line x1="190" y1="35" x2="204" y2="50" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="190" y1="0" x2="190" y2="35" style="stroke-width:2" />
+  <line x1="204" y1="14" x2="204" y2="50" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="190.0,0.0 204.9485979497544,14.948597949754403 204.9485979497544,50.176723267048196 190.0,35.228125317293795" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="190" y1="0" x2="229" y2="0" style="stroke-width:2" />
+  <line x1="204" y1="14" x2="244" y2="14" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="190" y1="0" x2="204" y2="14" style="stroke-width:2" />
+  <line x1="209" y1="0" x2="224" y2="14" />
+  <line x1="229" y1="0" x2="244" y2="14" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="190.0,0.0 229.24565621623074,0.0 244.19425416598514,14.948597949754403 204.9485979497544,14.948597949754403" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="204" y1="14" x2="244" y2="14" style="stroke-width:2" />
+  <line x1="204" y1="50" x2="244" y2="50" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="204" y1="14" x2="204" y2="50" style="stroke-width:2" />
+  <line x1="224" y1="14" x2="224" y2="50" />
+  <line x1="244" y1="14" x2="244" y2="50" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="204.9485979497544,14.948597949754403 244.19425416598514,14.948597949754403 244.19425416598514,50.176723267048196 204.9485979497544,50.176723267048196" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="224.571426" y="70.176723" font-size="1.0rem" font-weight="100" text-anchor="middle" >1440</text>
+  <text x="264.194254" y="32.562661" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,264.194254,32.562661)">720</text>
+  <text x="187.474299" y="62.702424" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,187.474299,62.702424)">16</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>field_name</span></div><div class='xr-var-dims'>(fields, field_name_length)</div><div class='xr-var-dtype'>|S1</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(16, 50), meta=np.ndarray&gt;</div><input id='attrs-4edef69b-8b11-4246-9919-955b3e75de21' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4edef69b-8b11-4246-9919-955b3e75de21' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6ab72dbd-c902-40c7-adc2-5a2a4c1cd620' class='xr-var-data-in' type='checkbox'><label for='data-6ab72dbd-c902-40c7-adc2-5a2a4c1cd620' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>comment :</span></dt><dd></dd><dt><span>long_name :</span></dt><dd>name of the contributing L4 analyses</dd><dt><span>units :</span></dt><dd></dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 800 B </td>
+                        <td> 800 B </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (16, 50) </td>
+                        <td> (16, 50) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> |S1 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="93" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="43" x2="120" y2="43" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="43" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="43" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,43.75646913247805 0.0,43.75646913247805" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="63.756469" font-size="1.0rem" font-weight="100" text-anchor="middle" >50</text>
+  <text x="140.000000" y="21.878235" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,21.878235)">16</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gradient_fields</span></div><div class='xr-var-dims'>(time, fieldsp1, lat, lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(16, 17, 720, 720), meta=np.ndarray&gt;</div><input id='attrs-5de871a4-1ec0-43e9-81f9-75d77199c2c4' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5de871a4-1ec0-43e9-81f9-75d77199c2c4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-69eb30b1-4965-488d-9723-d681b243fd9f' class='xr-var-data-in' type='checkbox'><label for='data-69eb30b1-4965-488d-9723-d681b243fd9f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>comment :</span></dt><dd></dd><dt><span>long_name :</span></dt><dd>Horizontal SST gradients of input analyses</dd><dt><span>source :</span></dt><dd>SST CCI V2, SST CCI V1.1, MyOcean, AVHRR_OI, CMC, HadISST.2.2.0.0_r0, HadISST.2.2.0.0_r1, HadISST.2.2.0.0_r2, HadISST.2.2.0.0_r3, HadISST.2.2.0.0_r4, HadISST.2.2.0.0_r5, HadISST.2.2.0.0_r6, HadISST.2.2.0.0_r7, HadISST.2.2.0.0_r8, HadISST.2.2.0.0_r9, MGDSST, GMPE median</dd><dt><span>units :</span></dt><dd>kelvin m-1</dd><dt><span>valid_max :</span></dt><dd>3000</dd><dt><span>valid_min :</span></dt><dd>-3000</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 1.64 TiB </td>
+                        <td> 1.05 GiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (12784, 17, 720, 1440) </td>
+                        <td> (16, 17, 720, 720) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1598 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float64 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="484" height="100" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="3" y1="0" x2="3" y2="25" />
+  <line x1="7" y1="0" x2="7" y2="25" />
+  <line x1="11" y1="0" x2="11" y2="25" />
+  <line x1="14" y1="0" x2="14" y2="25" />
+  <line x1="18" y1="0" x2="18" y2="25" />
+  <line x1="22" y1="0" x2="22" y2="25" />
+  <line x1="26" y1="0" x2="26" y2="25" />
+  <line x1="29" y1="0" x2="29" y2="25" />
+  <line x1="33" y1="0" x2="33" y2="25" />
+  <line x1="37" y1="0" x2="37" y2="25" />
+  <line x1="41" y1="0" x2="41" y2="25" />
+  <line x1="44" y1="0" x2="44" y2="25" />
+  <line x1="48" y1="0" x2="48" y2="25" />
+  <line x1="52" y1="0" x2="52" y2="25" />
+  <line x1="56" y1="0" x2="56" y2="25" />
+  <line x1="59" y1="0" x2="59" y2="25" />
+  <line x1="63" y1="0" x2="63" y2="25" />
+  <line x1="67" y1="0" x2="67" y2="25" />
+  <line x1="71" y1="0" x2="71" y2="25" />
+  <line x1="74" y1="0" x2="74" y2="25" />
+  <line x1="78" y1="0" x2="78" y2="25" />
+  <line x1="82" y1="0" x2="82" y2="25" />
+  <line x1="86" y1="0" x2="86" y2="25" />
+  <line x1="89" y1="0" x2="89" y2="25" />
+  <line x1="93" y1="0" x2="93" y2="25" />
+  <line x1="97" y1="0" x2="97" y2="25" />
+  <line x1="101" y1="0" x2="101" y2="25" />
+  <line x1="104" y1="0" x2="104" y2="25" />
+  <line x1="108" y1="0" x2="108" y2="25" />
+  <line x1="112" y1="0" x2="112" y2="25" />
+  <line x1="116" y1="0" x2="116" y2="25" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#8B4903A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >12784</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+
+
+  <!-- Horizontal lines -->
+  <line x1="190" y1="0" x2="204" y2="14" style="stroke-width:2" />
+  <line x1="190" y1="35" x2="204" y2="50" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="190" y1="0" x2="190" y2="35" style="stroke-width:2" />
+  <line x1="204" y1="14" x2="204" y2="50" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="190.0,0.0 204.9485979497544,14.948597949754403 204.9485979497544,50.176723267048196 190.0,35.228125317293795" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="190" y1="0" x2="229" y2="0" style="stroke-width:2" />
+  <line x1="204" y1="14" x2="244" y2="14" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="190" y1="0" x2="204" y2="14" style="stroke-width:2" />
+  <line x1="209" y1="0" x2="224" y2="14" />
+  <line x1="229" y1="0" x2="244" y2="14" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="190.0,0.0 229.24565621623074,0.0 244.19425416598514,14.948597949754403 204.9485979497544,14.948597949754403" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="204" y1="14" x2="244" y2="14" style="stroke-width:2" />
+  <line x1="204" y1="50" x2="244" y2="50" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="204" y1="14" x2="204" y2="50" style="stroke-width:2" />
+  <line x1="224" y1="14" x2="224" y2="50" />
+  <line x1="244" y1="14" x2="244" y2="50" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="204.9485979497544,14.948597949754403 244.19425416598514,14.948597949754403 244.19425416598514,50.176723267048196 204.9485979497544,50.176723267048196" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="224.571426" y="70.176723" font-size="1.0rem" font-weight="100" text-anchor="middle" >1440</text>
+  <text x="264.194254" y="32.562661" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,264.194254,32.562661)">720</text>
+  <text x="187.474299" y="62.702424" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,187.474299,62.702424)">17</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>median_type</span></div><div class='xr-var-dims'>(time, lat, lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(16, 720, 720), meta=np.ndarray&gt;</div><input id='attrs-e4640e7d-6145-4ff2-ae42-822411aed624' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e4640e7d-6145-4ff2-ae42-822411aed624' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6ea1506b-f141-445a-a692-d5edde2fe42a' class='xr-var-data-in' type='checkbox'><label for='data-6ea1506b-f141-445a-a692-d5edde2fe42a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>comment :</span></dt><dd></dd><dt><span>long_name :</span></dt><dd>Index of analysis which is the ensemble median</dd><dt><span>source :</span></dt><dd>SST CCI V2, SST CCI V1.1, MyOcean, AVHRR_OI, CMC, HadISST.2.2.0.0_r0, HadISST.2.2.0.0_r1, HadISST.2.2.0.0_r2, HadISST.2.2.0.0_r3, HadISST.2.2.0.0_r4, HadISST.2.2.0.0_r5, HadISST.2.2.0.0_r6, HadISST.2.2.0.0_r7, HadISST.2.2.0.0_r8, HadISST.2.2.0.0_r9, MGDSST</dd><dt><span>units :</span></dt><dd></dd><dt><span>valid_max :</span></dt><dd>3000</dd><dt><span>valid_min :</span></dt><dd>-3000</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 98.75 GiB </td>
+                        <td> 63.28 MiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (12784, 720, 1440) </td>
+                        <td> (16, 720, 720) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1598 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float64 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="169" height="155" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="10" y1="0" x2="80" y2="70" style="stroke-width:2" />
+  <line x1="10" y1="35" x2="80" y2="105" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="10" y1="0" x2="10" y2="35" style="stroke-width:2" />
+  <line x1="13" y1="3" x2="13" y2="38" />
+  <line x1="17" y1="7" x2="17" y2="42" />
+  <line x1="21" y1="11" x2="21" y2="46" />
+  <line x1="24" y1="14" x2="24" y2="50" />
+  <line x1="28" y1="18" x2="28" y2="53" />
+  <line x1="32" y1="22" x2="32" y2="57" />
+  <line x1="35" y1="25" x2="35" y2="61" />
+  <line x1="39" y1="29" x2="39" y2="64" />
+  <line x1="43" y1="33" x2="43" y2="68" />
+  <line x1="47" y1="37" x2="47" y2="72" />
+  <line x1="50" y1="40" x2="50" y2="76" />
+  <line x1="54" y1="44" x2="54" y2="79" />
+  <line x1="58" y1="48" x2="58" y2="83" />
+  <line x1="61" y1="51" x2="61" y2="87" />
+  <line x1="65" y1="55" x2="65" y2="90" />
+  <line x1="69" y1="59" x2="69" y2="94" />
+  <line x1="73" y1="63" x2="73" y2="98" />
+  <line x1="76" y1="66" x2="76" y2="102" />
+  <line x1="80" y1="70" x2="80" y2="105" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="10.0,0.0 80.58823529411765,70.58823529411765 80.58823529411765,105.81636061141145 10.0,35.228125317293795" style="fill:#8B4903A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="10" y1="0" x2="49" y2="0" style="stroke-width:2" />
+  <line x1="13" y1="3" x2="52" y2="3" />
+  <line x1="17" y1="7" x2="56" y2="7" />
+  <line x1="21" y1="11" x2="60" y2="11" />
+  <line x1="24" y1="14" x2="64" y2="14" />
+  <line x1="28" y1="18" x2="67" y2="18" />
+  <line x1="32" y1="22" x2="71" y2="22" />
+  <line x1="35" y1="25" x2="75" y2="25" />
+  <line x1="39" y1="29" x2="78" y2="29" />
+  <line x1="43" y1="33" x2="82" y2="33" />
+  <line x1="47" y1="37" x2="86" y2="37" />
+  <line x1="50" y1="40" x2="90" y2="40" />
+  <line x1="54" y1="44" x2="93" y2="44" />
+  <line x1="58" y1="48" x2="97" y2="48" />
+  <line x1="61" y1="51" x2="101" y2="51" />
+  <line x1="65" y1="55" x2="104" y2="55" />
+  <line x1="69" y1="59" x2="108" y2="59" />
+  <line x1="73" y1="63" x2="112" y2="63" />
+  <line x1="76" y1="66" x2="116" y2="66" />
+  <line x1="80" y1="70" x2="119" y2="70" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="10" y1="0" x2="80" y2="70" style="stroke-width:2" />
+  <line x1="29" y1="0" x2="100" y2="70" />
+  <line x1="49" y1="0" x2="119" y2="70" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="10.0,0.0 49.24565621623075,0.0 119.8338915103484,70.58823529411765 80.58823529411765,70.58823529411765" style="fill:#8B4903A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="80" y1="70" x2="119" y2="70" style="stroke-width:2" />
+  <line x1="80" y1="105" x2="119" y2="105" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="80" y1="70" x2="80" y2="105" style="stroke-width:2" />
+  <line x1="100" y1="70" x2="100" y2="105" />
+  <line x1="119" y1="70" x2="119" y2="105" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="80.58823529411765,70.58823529411765 119.8338915103484,70.58823529411765 119.8338915103484,105.81636061141145 80.58823529411765,105.81636061141145" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="100.211063" y="125.816361" font-size="1.0rem" font-weight="100" text-anchor="middle" >1440</text>
+  <text x="139.833892" y="88.202298" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,139.833892,88.202298)">720</text>
+  <text x="35.294118" y="90.522243" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,35.294118,90.522243)">12784</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>standard_deviation</span></div><div class='xr-var-dims'>(time, lat, lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(16, 720, 720), meta=np.ndarray&gt;</div><input id='attrs-efb7dc45-bdd8-4b61-8b6c-6e0341a15daa' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-efb7dc45-bdd8-4b61-8b6c-6e0341a15daa' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-75538e22-1d81-4f41-ab0d-3bb41f877be0' class='xr-var-data-in' type='checkbox'><label for='data-75538e22-1d81-4f41-ab0d-3bb41f877be0' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>comment :</span></dt><dd></dd><dt><span>long_name :</span></dt><dd>Standard deviation of input analyses</dd><dt><span>source :</span></dt><dd>SST CCI V2, SST CCI V1.1, MyOcean, AVHRR_OI, CMC, HadISST.2.2.0.0_r0, HadISST.2.2.0.0_r1, HadISST.2.2.0.0_r2, HadISST.2.2.0.0_r3, HadISST.2.2.0.0_r4, HadISST.2.2.0.0_r5, HadISST.2.2.0.0_r6, HadISST.2.2.0.0_r7, HadISST.2.2.0.0_r8, HadISST.2.2.0.0_r9, MGDSST</dd><dt><span>units :</span></dt><dd>kelvin</dd><dt><span>valid_max :</span></dt><dd>32000</dd><dt><span>valid_min :</span></dt><dd>-32000</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 98.75 GiB </td>
+                        <td> 63.28 MiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (12784, 720, 1440) </td>
+                        <td> (16, 720, 720) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1598 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float64 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="169" height="155" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="10" y1="0" x2="80" y2="70" style="stroke-width:2" />
+  <line x1="10" y1="35" x2="80" y2="105" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="10" y1="0" x2="10" y2="35" style="stroke-width:2" />
+  <line x1="13" y1="3" x2="13" y2="38" />
+  <line x1="17" y1="7" x2="17" y2="42" />
+  <line x1="21" y1="11" x2="21" y2="46" />
+  <line x1="24" y1="14" x2="24" y2="50" />
+  <line x1="28" y1="18" x2="28" y2="53" />
+  <line x1="32" y1="22" x2="32" y2="57" />
+  <line x1="35" y1="25" x2="35" y2="61" />
+  <line x1="39" y1="29" x2="39" y2="64" />
+  <line x1="43" y1="33" x2="43" y2="68" />
+  <line x1="47" y1="37" x2="47" y2="72" />
+  <line x1="50" y1="40" x2="50" y2="76" />
+  <line x1="54" y1="44" x2="54" y2="79" />
+  <line x1="58" y1="48" x2="58" y2="83" />
+  <line x1="61" y1="51" x2="61" y2="87" />
+  <line x1="65" y1="55" x2="65" y2="90" />
+  <line x1="69" y1="59" x2="69" y2="94" />
+  <line x1="73" y1="63" x2="73" y2="98" />
+  <line x1="76" y1="66" x2="76" y2="102" />
+  <line x1="80" y1="70" x2="80" y2="105" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="10.0,0.0 80.58823529411765,70.58823529411765 80.58823529411765,105.81636061141145 10.0,35.228125317293795" style="fill:#8B4903A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="10" y1="0" x2="49" y2="0" style="stroke-width:2" />
+  <line x1="13" y1="3" x2="52" y2="3" />
+  <line x1="17" y1="7" x2="56" y2="7" />
+  <line x1="21" y1="11" x2="60" y2="11" />
+  <line x1="24" y1="14" x2="64" y2="14" />
+  <line x1="28" y1="18" x2="67" y2="18" />
+  <line x1="32" y1="22" x2="71" y2="22" />
+  <line x1="35" y1="25" x2="75" y2="25" />
+  <line x1="39" y1="29" x2="78" y2="29" />
+  <line x1="43" y1="33" x2="82" y2="33" />
+  <line x1="47" y1="37" x2="86" y2="37" />
+  <line x1="50" y1="40" x2="90" y2="40" />
+  <line x1="54" y1="44" x2="93" y2="44" />
+  <line x1="58" y1="48" x2="97" y2="48" />
+  <line x1="61" y1="51" x2="101" y2="51" />
+  <line x1="65" y1="55" x2="104" y2="55" />
+  <line x1="69" y1="59" x2="108" y2="59" />
+  <line x1="73" y1="63" x2="112" y2="63" />
+  <line x1="76" y1="66" x2="116" y2="66" />
+  <line x1="80" y1="70" x2="119" y2="70" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="10" y1="0" x2="80" y2="70" style="stroke-width:2" />
+  <line x1="29" y1="0" x2="100" y2="70" />
+  <line x1="49" y1="0" x2="119" y2="70" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="10.0,0.0 49.24565621623075,0.0 119.8338915103484,70.58823529411765 80.58823529411765,70.58823529411765" style="fill:#8B4903A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="80" y1="70" x2="119" y2="70" style="stroke-width:2" />
+  <line x1="80" y1="105" x2="119" y2="105" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="80" y1="70" x2="80" y2="105" style="stroke-width:2" />
+  <line x1="100" y1="70" x2="100" y2="105" />
+  <line x1="119" y1="70" x2="119" y2="105" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="80.58823529411765,70.58823529411765 119.8338915103484,70.58823529411765 119.8338915103484,105.81636061141145 80.58823529411765,105.81636061141145" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="100.211063" y="125.816361" font-size="1.0rem" font-weight="100" text-anchor="middle" >1440</text>
+  <text x="139.833892" y="88.202298" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,139.833892,88.202298)">720</text>
+  <text x="35.294118" y="90.522243" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,35.294118,90.522243)">12784</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-b665a1a0-9eed-4b41-b971-519c8e22ef31' class='xr-section-summary-in' type='checkbox'  ><label for='section-b665a1a0-9eed-4b41-b971-519c8e22ef31' class='xr-section-summary' >Indexes: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>field_name_length</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-8822a6f1-ff61-4982-a8ce-5c873926f037' class='xr-index-data-in' type='checkbox'/><label for='index-8822a6f1-ff61-4982-a8ce-5c873926f037' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+       19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36,
+       37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],
+      dtype=&#x27;int32&#x27;, name=&#x27;field_name_length&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>fields</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-c9e90509-ebfb-4370-b453-146895934b82' class='xr-index-data-in' type='checkbox'/><label for='index-c9e90509-ebfb-4370-b453-146895934b82' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], dtype=&#x27;int32&#x27;, name=&#x27;fields&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>fieldsp1</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-c28f68ba-9ed0-4769-bcbd-e90035b49d15' class='xr-index-data-in' type='checkbox'/><label for='index-c28f68ba-9ed0-4769-bcbd-e90035b49d15' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17], dtype=&#x27;int32&#x27;, name=&#x27;fieldsp1&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>lat</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-5b868f28-9beb-4823-b330-7256e4f84f62' class='xr-index-data-in' type='checkbox'/><label for='index-5b868f28-9beb-4823-b330-7256e4f84f62' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([-89.875, -89.625, -89.375, -89.125, -88.875, -88.625, -88.375, -88.125,
+       -87.875, -87.625,
+       ...
+        87.625,  87.875,  88.125,  88.375,  88.625,  88.875,  89.125,  89.375,
+        89.625,  89.875],
+      dtype=&#x27;float32&#x27;, name=&#x27;lat&#x27;, length=720))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>lon</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-89122549-6f27-4389-9fe1-c00fb0c311e4' class='xr-index-data-in' type='checkbox'/><label for='index-89122549-6f27-4389-9fe1-c00fb0c311e4' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([-179.875, -179.625, -179.375, -179.125, -178.875, -178.625, -178.375,
+       -178.125, -177.875, -177.625,
+       ...
+        177.625,  177.875,  178.125,  178.375,  178.625,  178.875,  179.125,
+        179.375,  179.625,  179.875],
+      dtype=&#x27;float32&#x27;, name=&#x27;lon&#x27;, length=1440))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-86416bee-cfa4-4c4b-9d4a-bdc59d94017a' class='xr-index-data-in' type='checkbox'/><label for='index-86416bee-cfa4-4c4b-9d4a-bdc59d94017a' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;1982-01-01 12:00:00&#x27;, &#x27;1982-01-02 12:00:00&#x27;,
+               &#x27;1982-01-03 12:00:00&#x27;, &#x27;1982-01-04 12:00:00&#x27;,
+               &#x27;1982-01-05 12:00:00&#x27;, &#x27;1982-01-06 12:00:00&#x27;,
+               &#x27;1982-01-07 12:00:00&#x27;, &#x27;1982-01-08 12:00:00&#x27;,
+               &#x27;1982-01-09 12:00:00&#x27;, &#x27;1982-01-10 12:00:00&#x27;,
+               ...
+               &#x27;2016-12-22 12:00:00&#x27;, &#x27;2016-12-23 12:00:00&#x27;,
+               &#x27;2016-12-24 12:00:00&#x27;, &#x27;2016-12-25 12:00:00&#x27;,
+               &#x27;2016-12-26 12:00:00&#x27;, &#x27;2016-12-27 12:00:00&#x27;,
+               &#x27;2016-12-28 12:00:00&#x27;, &#x27;2016-12-29 12:00:00&#x27;,
+               &#x27;2016-12-30 12:00:00&#x27;, &#x27;2016-12-31 12:00:00&#x27;],
+              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, length=12784, freq=None))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-c54b40d8-0013-41ff-8833-c1e7af14ac01' class='xr-section-summary-in' type='checkbox'  ><label for='section-c54b40d8-0013-41ff-8833-c1e7af14ac01' class='xr-section-summary' >Attributes: <span>(47)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.4</dd><dt><span>acknowledgment :</span></dt><dd>Funded by ESA</dd><dt><span>cdm_data_type :</span></dt><dd>grid</dd><dt><span>comment :</span></dt><dd></dd><dt><span>creator_email :</span></dt><dd>science.leader@esa-sst-cci.org</dd><dt><span>creator_name :</span></dt><dd>SST_cci</dd><dt><span>creator_url :</span></dt><dd>http://www.esa-sst-cci.org</dd><dt><span>date_created :</span></dt><dd>20180711T172223Z</dd><dt><span>easternmost_longitude :</span></dt><dd>180.0</dd><dt><span>file_quality_level :</span></dt><dd>3</dd><dt><span>gds_version_id :</span></dt><dd>2.0</dd><dt><span>geospatial_lat_resolution :</span></dt><dd>0.25 degree</dd><dt><span>geospatial_lat_units :</span></dt><dd>degrees north</dd><dt><span>geospatial_lon_resolution :</span></dt><dd>0.25 degree</dd><dt><span>geospatial_lon_units :</span></dt><dd>degrees east</dd><dt><span>history :</span></dt><dd>NULL</dd><dt><span>id :</span></dt><dd>UKMO-L4LRens-GLOB-GMPE</dd><dt><span>institution :</span></dt><dd>UKMO</dd><dt><span>keywords :</span></dt><dd>Oceans &gt; Ocean Temperature &gt; Sea Surface Temperature</dd><dt><span>keywords_vocabulary :</span></dt><dd>NASA Global Change Master Directory (GCMD) Science Keywords</dd><dt><span>license :</span></dt><dd>Creative Commons Licence by attribution (https://creativecommons.org/licenses/by/4.0/</dd><dt><span>metadata_conventions :</span></dt><dd>Unidata Observation Dataset v1.0</dd><dt><span>metadata_link :</span></dt><dd>not available</dd><dt><span>naming_authority :</span></dt><dd>org.ghrsst</dd><dt><span>netcdf_version_id :</span></dt><dd>3.6</dd><dt><span>northernmost_latitude :</span></dt><dd>90.0</dd><dt><span>platform :</span></dt><dd></dd><dt><span>processing_level :</span></dt><dd>GMPE</dd><dt><span>product_version :</span></dt><dd>3.0</dd><dt><span>project :</span></dt><dd>Climate Change Initiative - European Space Agency</dd><dt><span>publisher_email :</span></dt><dd>science.leader@esa-sst-cci.org</dd><dt><span>publisher_name :</span></dt><dd>ESACCI</dd><dt><span>publisher_url :</span></dt><dd>http://www.esa-sst-cci.org</dd><dt><span>references :</span></dt><dd>Martin et al., Deep Sea Research II, 2011</dd><dt><span>sensor :</span></dt><dd></dd><dt><span>source :</span></dt><dd>SST CCI V2, SST CCI V1.1, MyOcean, AVHRR_OI, CMC, HadISST.2.2.0.0_r0, HadISST.2.2.0.0_r1, HadISST.2.2.0.0_r2, HadISST.2.2.0.0_r3, HadISST.2.2.0.0_r4, HadISST.2.2.0.0_r5, HadISST.2.2.0.0_r6, HadISST.2.2.0.0_r7, HadISST.2.2.0.0_r8, HadISST.2.2.0.0_r9, MGDSST</dd><dt><span>southernmost_latitude :</span></dt><dd>-90.0</dd><dt><span>spatial_resolution :</span></dt><dd>0.25 degree</dd><dt><span>standard_name_vocabulary :</span></dt><dd>NetCDF Climate and Forecast (CF) Metadata Convention</dd><dt><span>start_time :</span></dt><dd>20161231T000000Z</dd><dt><span>stop_time :</span></dt><dd>20170101T000000Z</dd><dt><span>summary :</span></dt><dd>An ensemble product with input from a number of L4 SST analyses</dd><dt><span>time_coverage_end :</span></dt><dd>20170101T000000Z</dd><dt><span>time_coverage_start :</span></dt><dd>20161231T000000Z</dd><dt><span>title :</span></dt><dd>Global SST Ensemble, L4 GMPE</dd><dt><span>uuid :</span></dt><dd>dc0c5b25-93bf-4943-aba1-7f0de9109620</dd><dt><span>westernmost_longitude :</span></dt><dd>-180.0</dd></dl></div></li></ul></div></div>
