@@ -1,0 +1,651 @@
+<div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme="dark"],
+html[data-theme="dark"],
+body[data-theme="dark"],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1f1f1f;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 0 20px 0 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: inline-block;
+  opacity: 0;
+  height: 0;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:focus + label {
+  border: 2px solid var(--xr-font-color0);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: "►";
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: "▼";
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: "(";
+}
+
+.xr-dim-list:after {
+  content: ")";
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ",";
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-index-name div,
+.xr-index-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2,
+.xr-no-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt; Size: 1kB
+Dimensions:   (time: 26, channel: 2, lat: 91, lon: 120)
+Coordinates:
+  * channel   (channel) float64 16B 11.0 12.0
+  * lat       (lat) float32 364B 51.01 51.01 51.03 51.03 ... 51.88 51.9 51.9
+  * lon       (lon) float32 480B -0.695 -0.685 -0.675 ... 0.475 0.485 0.495
+  * time      (time) datetime64[ns] 208B 1995-12-31 1996-12-31 ... 2020-12-31
+Data variables:
+    lst_mean  (time) float64 208B dask.array&lt;chunksize=(1,), meta=np.ndarray&gt;
+    lst_std   (time) float64 208B dask.array&lt;chunksize=(1,), meta=np.ndarray&gt;
+Attributes: (12/44)
+    Conventions:                CF-1.8
+    catalogue_url:              https://catalogue.ceda.ac.uk/uuid/6babb8d9a8d...
+    cdm_data_type:              grid
+    comment:                    These data were produced as part of the ESA L...
+    creator_email:              djg20@le.ac.uk
+    creator_name:               University of Leicester Surface Temperature G...
+    ...                         ...
+    time_coverage_end:          2020-12-31T00:00:00
+    time_coverage_resolution:   P366D
+    time_coverage_start:        1995-12-31T00:00:00
+    title:                      ESA LST CCI land surface temperature time ser...
+    geospatial_bounds_crs:      CRS84
+    geospatial_bounds:          POLYGON((-0.6999942064285278 51.0000038146972...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-fa1de0fe-20d0-4216-9044-1f30e16d55c7' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-fa1de0fe-20d0-4216-9044-1f30e16d55c7' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 26</li><li><span class='xr-has-index'>channel</span>: 2</li><li><span class='xr-has-index'>lat</span>: 91</li><li><span class='xr-has-index'>lon</span>: 120</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-dc6bc7f4-4644-492a-8428-10c1424611da' class='xr-section-summary-in' type='checkbox'  checked><label for='section-dc6bc7f4-4644-492a-8428-10c1424611da' class='xr-section-summary' >Coordinates: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>channel</span></div><div class='xr-var-dims'>(channel)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>11.0 12.0</div><input id='attrs-a095b361-3f5d-4ac7-9a89-2109aff8f729' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a095b361-3f5d-4ac7-9a89-2109aff8f729' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-817da21a-6d27-42ef-8f1b-52907908debf' class='xr-var-data-in' type='checkbox'><label for='data-817da21a-6d27-42ef-8f1b-52907908debf' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>channel wavelength in microns</dd><dt><span>units :</span></dt><dd>microns</dd><dt><span>valid_max :</span></dt><dd>15000</dd><dt><span>valid_min :</span></dt><dd>0</dd></dl></div><div class='xr-var-data'><pre>array([10.999001, 11.999001])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>51.01 51.01 51.03 ... 51.9 51.9</div><input id='attrs-fbf43230-bc23-4e38-b1a4-2d77f8276b3c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-fbf43230-bc23-4e38-b1a4-2d77f8276b3c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-39b35d1b-1d2a-4543-9911-2a7d69be0917' class='xr-var-data-in' type='checkbox'><label for='data-39b35d1b-1d2a-4543-9911-2a7d69be0917' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>latitude_coordinates</dd><dt><span>reference_datum :</span></dt><dd>geographical coordinates, WGS84 projection</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>valid_max :</span></dt><dd>90.0</dd><dt><span>valid_min :</span></dt><dd>-90.0</dd></dl></div><div class='xr-var-data'><pre>array([51.005   , 51.014996, 51.025005, 51.035   , 51.044994, 51.055004,
+       51.065   , 51.074993, 51.085003, 51.094997, 51.104992, 51.115   ,
+       51.124996, 51.13499 , 51.145   , 51.154995, 51.165005, 51.175   ,
+       51.184994, 51.195004, 51.204998, 51.214993, 51.225002, 51.234997,
+       51.24499 , 51.255   , 51.264996, 51.275005, 51.285   , 51.294994,
+       51.305004, 51.315   , 51.324993, 51.335003, 51.344997, 51.354992,
+       51.365   , 51.374996, 51.38499 , 51.395   , 51.404995, 51.415005,
+       51.425   , 51.434994, 51.445004, 51.454998, 51.464993, 51.475002,
+       51.484997, 51.49499 , 51.505   , 51.514996, 51.525005, 51.535   ,
+       51.544994, 51.555004, 51.565   , 51.574993, 51.585003, 51.594997,
+       51.604992, 51.615   , 51.624996, 51.63499 , 51.645   , 51.654995,
+       51.665005, 51.675   , 51.684994, 51.695004, 51.704998, 51.714993,
+       51.725002, 51.734997, 51.74499 , 51.755   , 51.764996, 51.775005,
+       51.785   , 51.794994, 51.805004, 51.815   , 51.824993, 51.835003,
+       51.844997, 51.854992, 51.865   , 51.874996, 51.88499 , 51.895   ,
+       51.904995], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-0.695 -0.685 ... 0.485 0.495</div><input id='attrs-bf4eb140-e89f-4f7c-ad9b-b9277c139b36' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-bf4eb140-e89f-4f7c-ad9b-b9277c139b36' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c10e06d4-bd80-4214-8f4d-99688960ffa5' class='xr-var-data-in' type='checkbox'><label for='data-c10e06d4-bd80-4214-8f4d-99688960ffa5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>longitude_coordinates</dd><dt><span>reference_datum :</span></dt><dd>geographical coordinates, WGS84 projection</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>valid_max :</span></dt><dd>180.0</dd><dt><span>valid_min :</span></dt><dd>-180.0</dd></dl></div><div class='xr-var-data'><pre>array([-0.694997, -0.685002, -0.675008, -0.664998, -0.655004, -0.645009,
+       -0.634999, -0.625005, -0.61501 , -0.605001, -0.595006, -0.585012,
+       -0.575002, -0.565007, -0.554998, -0.545003, -0.535009, -0.524999,
+       -0.515004, -0.50501 , -0.495   , -0.485005, -0.475011, -0.465001,
+       -0.455007, -0.444997, -0.435002, -0.425008, -0.414998, -0.405004,
+       -0.395009, -0.384999, -0.375005, -0.36501 , -0.355001, -0.345006,
+       -0.335012, -0.325002, -0.315007, -0.304998, -0.295003, -0.285009,
+       -0.274999, -0.265004, -0.25501 , -0.245   , -0.235005, -0.225011,
+       -0.215001, -0.205007, -0.194997, -0.185002, -0.175008, -0.164998,
+       -0.155004, -0.145009, -0.134999, -0.125005, -0.11501 , -0.105001,
+       -0.095006, -0.085012, -0.075002, -0.065007, -0.054998, -0.045003,
+       -0.035009, -0.024999, -0.015004, -0.00501 ,  0.005   ,  0.014995,
+        0.024989,  0.034999,  0.044993,  0.055003,  0.064998,  0.074992,
+        0.085002,  0.094996,  0.104991,  0.115001,  0.124995,  0.13499 ,
+        0.144999,  0.154994,  0.164988,  0.174998,  0.184993,  0.195002,
+        0.204997,  0.214991,  0.225001,  0.234996,  0.24499 ,  0.255   ,
+        0.264995,  0.274989,  0.284999,  0.294993,  0.305003,  0.314998,
+        0.324992,  0.335002,  0.344996,  0.354991,  0.365001,  0.374995,
+        0.38499 ,  0.394999,  0.404994,  0.414988,  0.424998,  0.434993,
+        0.445002,  0.454997,  0.464991,  0.475001,  0.484996,  0.49499 ],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>1995-12-31 ... 2020-12-31</div><input id='attrs-76491181-b6e7-4b7f-a99a-2b24d64e5393' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-76491181-b6e7-4b7f-a99a-2b24d64e5393' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1d98e463-5537-4237-af0e-96a6a98380ea' class='xr-var-data-in' type='checkbox'><label for='data-1d98e463-5537-4237-af0e-96a6a98380ea' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;1995-12-31T00:00:00.000000000&#x27;, &#x27;1996-12-31T00:00:00.000000000&#x27;,
+       &#x27;1997-12-31T00:00:00.000000000&#x27;, &#x27;1998-12-31T00:00:00.000000000&#x27;,
+       &#x27;1999-12-31T00:00:00.000000000&#x27;, &#x27;2000-12-31T00:00:00.000000000&#x27;,
+       &#x27;2001-12-31T00:00:00.000000000&#x27;, &#x27;2002-12-31T00:00:00.000000000&#x27;,
+       &#x27;2003-12-31T00:00:00.000000000&#x27;, &#x27;2004-12-31T00:00:00.000000000&#x27;,
+       &#x27;2005-12-31T00:00:00.000000000&#x27;, &#x27;2006-12-31T00:00:00.000000000&#x27;,
+       &#x27;2007-12-31T00:00:00.000000000&#x27;, &#x27;2008-12-31T00:00:00.000000000&#x27;,
+       &#x27;2009-12-31T00:00:00.000000000&#x27;, &#x27;2010-12-31T00:00:00.000000000&#x27;,
+       &#x27;2011-12-31T00:00:00.000000000&#x27;, &#x27;2012-12-31T00:00:00.000000000&#x27;,
+       &#x27;2013-12-31T00:00:00.000000000&#x27;, &#x27;2014-12-31T00:00:00.000000000&#x27;,
+       &#x27;2015-12-31T00:00:00.000000000&#x27;, &#x27;2016-12-31T00:00:00.000000000&#x27;,
+       &#x27;2017-12-31T00:00:00.000000000&#x27;, &#x27;2018-12-31T00:00:00.000000000&#x27;,
+       &#x27;2019-12-31T00:00:00.000000000&#x27;, &#x27;2020-12-31T00:00:00.000000000&#x27;],
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-2cb6cd62-1df8-49f0-8f2b-a4c05ff92270' class='xr-section-summary-in' type='checkbox'  checked><label for='section-2cb6cd62-1df8-49f0-8f2b-a4c05ff92270' class='xr-section-summary' >Data variables: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>lst_mean</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1,), meta=np.ndarray&gt;</div><input id='attrs-d0638ff0-cb1a-4588-a03d-0547d0bae6e6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d0638ff0-cb1a-4588-a03d-0547d0bae6e6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ed232bb1-fc98-40fe-a68b-76c874f4b1a3' class='xr-var-data-in' type='checkbox'><label for='data-ed232bb1-fc98-40fe-a68b-76c874f4b1a3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>land surface temperature</dd><dt><span>units :</span></dt><dd>kelvin</dd><dt><span>valid_max :</span></dt><dd>7685</dd><dt><span>valid_min :</span></dt><dd>-8315</dd><dt><span>ESA_Climate_Toolbox_Description :</span></dt><dd>Mean aggregated over [&#x27;lat&#x27;, &#x27;lon&#x27;] at each point in time.</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 208 B </td>
+                        <td> 8 B </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (26,) </td>
+                        <td> (1,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 26 chunks in 147 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float64 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="82" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="32" x2="120" y2="32" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="32" style="stroke-width:2" />
+  <line x1="4" y1="0" x2="4" y2="32" />
+  <line x1="9" y1="0" x2="9" y2="32" />
+  <line x1="18" y1="0" x2="18" y2="32" />
+  <line x1="23" y1="0" x2="23" y2="32" />
+  <line x1="27" y1="0" x2="27" y2="32" />
+  <line x1="36" y1="0" x2="36" y2="32" />
+  <line x1="41" y1="0" x2="41" y2="32" />
+  <line x1="46" y1="0" x2="46" y2="32" />
+  <line x1="55" y1="0" x2="55" y2="32" />
+  <line x1="60" y1="0" x2="60" y2="32" />
+  <line x1="69" y1="0" x2="69" y2="32" />
+  <line x1="73" y1="0" x2="73" y2="32" />
+  <line x1="78" y1="0" x2="78" y2="32" />
+  <line x1="87" y1="0" x2="87" y2="32" />
+  <line x1="92" y1="0" x2="92" y2="32" />
+  <line x1="96" y1="0" x2="96" y2="32" />
+  <line x1="106" y1="0" x2="106" y2="32" />
+  <line x1="110" y1="0" x2="110" y2="32" />
+  <line x1="120" y1="0" x2="120" y2="32" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,32.89421872575591 0.0,32.89421872575591" style="fill:#8B4903A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="52.894219" font-size="1.0rem" font-weight="100" text-anchor="middle" >26</text>
+  <text x="140.000000" y="16.447109" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,16.447109)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lst_std</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1,), meta=np.ndarray&gt;</div><input id='attrs-b93640b0-820f-48a8-b651-046f2399dd06' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b93640b0-820f-48a8-b651-046f2399dd06' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-268339b8-2b2b-4ff9-889d-fe38d4d9ea25' class='xr-var-data-in' type='checkbox'><label for='data-268339b8-2b2b-4ff9-889d-fe38d4d9ea25' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>ESA_Climate_Toolbox_Description :</span></dt><dd>Accompanying std values for variable &#x27;lst&#x27;</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 208 B </td>
+                        <td> 8 B </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (26,) </td>
+                        <td> (1,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 26 chunks in 159 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float64 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="82" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="32" x2="120" y2="32" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="32" style="stroke-width:2" />
+  <line x1="4" y1="0" x2="4" y2="32" />
+  <line x1="9" y1="0" x2="9" y2="32" />
+  <line x1="18" y1="0" x2="18" y2="32" />
+  <line x1="23" y1="0" x2="23" y2="32" />
+  <line x1="27" y1="0" x2="27" y2="32" />
+  <line x1="36" y1="0" x2="36" y2="32" />
+  <line x1="41" y1="0" x2="41" y2="32" />
+  <line x1="46" y1="0" x2="46" y2="32" />
+  <line x1="55" y1="0" x2="55" y2="32" />
+  <line x1="60" y1="0" x2="60" y2="32" />
+  <line x1="69" y1="0" x2="69" y2="32" />
+  <line x1="73" y1="0" x2="73" y2="32" />
+  <line x1="78" y1="0" x2="78" y2="32" />
+  <line x1="87" y1="0" x2="87" y2="32" />
+  <line x1="92" y1="0" x2="92" y2="32" />
+  <line x1="96" y1="0" x2="96" y2="32" />
+  <line x1="106" y1="0" x2="106" y2="32" />
+  <line x1="110" y1="0" x2="110" y2="32" />
+  <line x1="120" y1="0" x2="120" y2="32" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,32.89421872575591 0.0,32.89421872575591" style="fill:#8B4903A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="52.894219" font-size="1.0rem" font-weight="100" text-anchor="middle" >26</text>
+  <text x="140.000000" y="16.447109" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,16.447109)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-dd417e84-16b9-4213-ba47-f1cb6a987b5f' class='xr-section-summary-in' type='checkbox'  ><label for='section-dd417e84-16b9-4213-ba47-f1cb6a987b5f' class='xr-section-summary' >Indexes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>channel</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-8b8752fa-7e28-4379-872c-e94af68ca6b1' class='xr-index-data-in' type='checkbox'/><label for='index-8b8752fa-7e28-4379-872c-e94af68ca6b1' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([10.999000522424467, 11.999000569921918], dtype=&#x27;float64&#x27;, name=&#x27;channel&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>lat</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-ba0a31c4-6752-4ffd-9a38-1f971e1963bc' class='xr-index-data-in' type='checkbox'/><label for='index-ba0a31c4-6752-4ffd-9a38-1f971e1963bc' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([51.005001068115234,  51.01499557495117,  51.02500534057617,
+        51.03499984741211,  51.04499435424805,  51.05500411987305,
+       51.064998626708984,  51.07499313354492,  51.08500289916992,
+        51.09499740600586,   51.1049919128418,   51.1150016784668,
+       51.124996185302734,  51.13499069213867,  51.14500045776367,
+        51.15499496459961,  51.16500473022461,  51.17499923706055,
+       51.184993743896484, 51.195003509521484,  51.20499801635742,
+        51.21499252319336,  51.22500228881836,   51.2349967956543,
+       51.244991302490234, 51.255001068115234,  51.26499557495117,
+        51.27500534057617,  51.28499984741211,  51.29499435424805,
+        51.30500411987305, 51.314998626708984,  51.32499313354492,
+        51.33500289916992,  51.34499740600586,   51.3549919128418,
+         51.3650016784668, 51.374996185302734,  51.38499069213867,
+        51.39500045776367,  51.40499496459961,  51.41500473022461,
+        51.42499923706055, 51.434993743896484, 51.445003509521484,
+        51.45499801635742,  51.46499252319336,  51.47500228881836,
+         51.4849967956543, 51.494991302490234, 51.505001068115234,
+        51.51499557495117,  51.52500534057617,  51.53499984741211,
+        51.54499435424805,  51.55500411987305, 51.564998626708984,
+        51.57499313354492,  51.58500289916992,  51.59499740600586,
+         51.6049919128418,   51.6150016784668, 51.624996185302734,
+        51.63499069213867,  51.64500045776367,  51.65499496459961,
+        51.66500473022461,  51.67499923706055, 51.684993743896484,
+       51.695003509521484,  51.70499801635742,  51.71499252319336,
+        51.72500228881836,   51.7349967956543, 51.744991302490234,
+       51.755001068115234,  51.76499557495117,  51.77500534057617,
+        51.78499984741211,  51.79499435424805,  51.80500411987305,
+       51.814998626708984,  51.82499313354492,  51.83500289916992,
+        51.84499740600586,   51.8549919128418,   51.8650016784668,
+       51.874996185302734,  51.88499069213867,  51.89500045776367,
+        51.90499496459961],
+      dtype=&#x27;float32&#x27;, name=&#x27;lat&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>lon</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-790e2ebb-f2af-4f31-ba1b-4215d13968fd' class='xr-index-data-in' type='checkbox'/><label for='index-790e2ebb-f2af-4f31-ba1b-4215d13968fd' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([-0.6949969530105591, -0.6850024461746216, -0.6750079393386841,
+       -0.6649981737136841, -0.6550036668777466, -0.6450091600418091,
+       -0.6349993944168091, -0.6250048875808716, -0.6150103807449341,
+       -0.6050006151199341,
+       ...
+        0.4049938917160034,  0.4149883985519409,  0.4249981641769409,
+        0.4349926710128784,  0.4450024366378784,  0.4549969434738159,
+        0.4649914503097534,  0.4750012159347534,  0.4849957227706909,
+        0.4949902296066284],
+      dtype=&#x27;float32&#x27;, name=&#x27;lon&#x27;, length=120))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-21a948d7-6d3f-42ab-8f64-bba44122e553' class='xr-index-data-in' type='checkbox'/><label for='index-21a948d7-6d3f-42ab-8f64-bba44122e553' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;1995-12-31&#x27;, &#x27;1996-12-31&#x27;, &#x27;1997-12-31&#x27;, &#x27;1998-12-31&#x27;,
+               &#x27;1999-12-31&#x27;, &#x27;2000-12-31&#x27;, &#x27;2001-12-31&#x27;, &#x27;2002-12-31&#x27;,
+               &#x27;2003-12-31&#x27;, &#x27;2004-12-31&#x27;, &#x27;2005-12-31&#x27;, &#x27;2006-12-31&#x27;,
+               &#x27;2007-12-31&#x27;, &#x27;2008-12-31&#x27;, &#x27;2009-12-31&#x27;, &#x27;2010-12-31&#x27;,
+               &#x27;2011-12-31&#x27;, &#x27;2012-12-31&#x27;, &#x27;2013-12-31&#x27;, &#x27;2014-12-31&#x27;,
+               &#x27;2015-12-31&#x27;, &#x27;2016-12-31&#x27;, &#x27;2017-12-31&#x27;, &#x27;2018-12-31&#x27;,
+               &#x27;2019-12-31&#x27;, &#x27;2020-12-31&#x27;],
+              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, freq=&#x27;YE-DEC&#x27;))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-78ca6d86-f1d0-4b98-8c7f-e98ef449108b' class='xr-section-summary-in' type='checkbox'  ><label for='section-78ca6d86-f1d0-4b98-8c7f-e98ef449108b' class='xr-section-summary' >Attributes: <span>(44)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.8</dd><dt><span>catalogue_url :</span></dt><dd>https://catalogue.ceda.ac.uk/uuid/6babb8d9a8d247bcb3da6aed42f4b59a</dd><dt><span>cdm_data_type :</span></dt><dd>grid</dd><dt><span>comment :</span></dt><dd>These data were produced as part of the ESA LST CCI project.</dd><dt><span>creator_email :</span></dt><dd>djg20@le.ac.uk</dd><dt><span>creator_name :</span></dt><dd>University of Leicester Surface Temperature Group</dd><dt><span>creator_url :</span></dt><dd>https://climate.esa.int/en/projects/land-surface-temperature</dd><dt><span>date_created :</span></dt><dd>20220616T135239Z</dd><dt><span>doi :</span></dt><dd>10.5285/785ef9d3965442669bff899540747e28</dd><dt><span>format_version :</span></dt><dd>CCI Data Standards v2.2</dd><dt><span>geospatial_lat_max :</span></dt><dd>51.90999221801758</dd><dt><span>geospatial_lat_min :</span></dt><dd>51.000003814697266</dd><dt><span>geospatial_lat_resolution :</span></dt><dd>0.0099945068359375</dd><dt><span>geospatial_lat_units :</span></dt><dd>degrees_north</dd><dt><span>geospatial_lon_max :</span></dt><dd>0.49998748302459717</dd><dt><span>geospatial_lon_min :</span></dt><dd>-0.6999942064285278</dd><dt><span>geospatial_lon_resolution :</span></dt><dd>0.0099945068359375</dd><dt><span>geospatial_lon_units :</span></dt><dd>degrees_east</dd><dt><span>geospatial_vertical_max :</span></dt><dd>0.0</dd><dt><span>geospatial_vertical_min :</span></dt><dd>0.0</dd><dt><span>history :</span></dt><dd>Created using software developed at University of Leicester
+Modified with the ESA Climate Toolbox v1.5.1 esa_climate_toolbox.ops.subset.subset_spatial v1.0 
+Default input values: OrderedDict({&#x27;ds&#x27;: {&#x27;position&#x27;: 0, &#x27;data_type&#x27;: &lt;class &#x27;xarray.core.dataset.Dataset&#x27;&gt;, &#x27;description&#x27;: &#x27;Dataset to subset&#x27;}, &#x27;region&#x27;: {&#x27;position&#x27;: 1, &#x27;data_type&#x27;: &lt;class &#x27;esa_climate_toolbox.core.types.PolygonLike&#x27;&gt;, &#x27;description&#x27;: &#x27;Spatial region to subset&#x27;}, &#x27;mask&#x27;: {&#x27;position&#x27;: 2, &#x27;default_value&#x27;: True, &#x27;data_type&#x27;: &lt;class &#x27;bool&#x27;&gt;, &#x27;description&#x27;: &#x27;Should values falling in the bounding box of the polygon but not the polygon itself be masked with NaN.&#x27;}})
+Provided input values: {&#x27;ds&#x27;: &lt;class &#x27;xarray.core.dataset.Dataset&#x27;&gt;, &#x27;region&#x27;: (-0.7, 51.0, 0.5, 51.9), &#x27;mask&#x27;: True, &#x27;monitor&#x27;: Monitor.NONE}
+
+Modified with the ESA Climate Toolbox v1.5.1 esa_climate_toolbox.ops.select.select_var v1.0 
+Default input values: OrderedDict({&#x27;ds&#x27;: {&#x27;position&#x27;: 0, &#x27;data_type&#x27;: &lt;class &#x27;esa_climate_toolbox.core.types.DatasetLike&#x27;&gt;, &#x27;description&#x27;: &#x27;The dataset or dataframe from which to perform selection.&#x27;}, &#x27;var&#x27;: {&#x27;position&#x27;: 1, &#x27;default_value&#x27;: None, &#x27;nullable&#x27;: True, &#x27;data_type&#x27;: &lt;class &#x27;esa_climate_toolbox.core.types.VarNamesLike&#x27;&gt;, &#x27;description&#x27;: &quot;One or more variable names to select and preserve in the dataset. All of these are valid &#x27;var_name&#x27; &#x27;var_name1,var_name2,var_name3&#x27; [&#x27;var_name1&#x27;, &#x27;var_name2&#x27;]. One can also use wildcards when doing the selection. E.g., choosing &#x27;var_name*&#x27; for selection will select all variables that start with &#x27;var_name&#x27;. This can be used to select variables along with their auxiliary variables, to select all uncertainty variables, and so on.&quot;, &#x27;value_set_source&#x27;: &#x27;ds&#x27;}})
+Provided input values: {&#x27;ds&#x27;: &lt;class &#x27;xarray.core.dataset.Dataset&#x27;&gt;, &#x27;var&#x27;: &#x27;lst&#x27;}
+
+Modified with the ESA Climate Toolbox v1.5.1 esa_climate_toolbox.ops.timeseries.tseries_mean v1.1 
+Default input values: OrderedDict({&#x27;ds&#x27;: {&#x27;position&#x27;: 0, &#x27;data_type&#x27;: &lt;class &#x27;xarray.core.dataset.Dataset&#x27;&gt;, &#x27;description&#x27;: &#x27;The dataset from which to perform timeseries extraction.&#x27;}, &#x27;var&#x27;: {&#x27;position&#x27;: 1, &#x27;default_value&#x27;: None, &#x27;nullable&#x27;: True, &#x27;data_type&#x27;: &lt;class &#x27;esa_climate_toolbox.core.types.VarNamesLike&#x27;&gt;, &#x27;description&#x27;: &#x27;Variables for which to perform timeseries extraction&#x27;, &#x27;value_set_source&#x27;: &#x27;ds&#x27;}, &#x27;apply_spatial_weighting&#x27;: {&#x27;position&#x27;: 2, &#x27;default_value&#x27;: True, &#x27;data_type&#x27;: &lt;class &#x27;bool&#x27;&gt;, &#x27;description&#x27;: &quot;Whether to apply spatial weighting to cancel the effects of grid cells closer to the equator cover more area than grid cells closer to the poles. Only applicable for datasets with a latitude column named &#x27;lat&#x27;. Default is True.&quot;}, &#x27;mean_suffix&#x27;: {&#x27;position&#x27;: 3, &#x27;default_value&#x27;: &#x27;_mean&#x27;, &#x27;data_type&#x27;: &lt;class &#x27;str&#x27;&gt;, &#x27;description&#x27;: &#x27;Mean suffix to use for resulting datasets&#x27;}, &#x27;std_suffix&#x27;: {&#x27;position&#x27;: 4, &#x27;default_value&#x27;: &#x27;_std&#x27;, &#x27;data_type&#x27;: &lt;class &#x27;str&#x27;&gt;, &#x27;description&#x27;: &#x27;Std suffix to use for resulting datasets&#x27;}})
+Provided input values: {&#x27;ds&#x27;: &lt;class &#x27;xarray.core.dataset.Dataset&#x27;&gt;, &#x27;var&#x27;: &#x27;lst&#x27;, &#x27;apply_spatial_weighting&#x27;: True, &#x27;mean_suffix&#x27;: &#x27;_mean&#x27;, &#x27;std_suffix&#x27;: &#x27;_std&#x27;, &#x27;monitor&#x27;: Monitor.NONE}
+
+Modified with the ESA Climate Toolbox v1.5.1 esa_climate_toolbox.ops.aggregate.temporal_aggregation v2.0 
+Default input values: OrderedDict({&#x27;ds&#x27;: {&#x27;position&#x27;: 0, &#x27;data_type&#x27;: &lt;class &#x27;esa_climate_toolbox.core.types.DatasetLike&#x27;&gt;, &#x27;description&#x27;: &#x27;Dataset to aggregate&#x27;}, &#x27;method&#x27;: {&#x27;position&#x27;: 1, &#x27;default_value&#x27;: &#x27;mean&#x27;, &#x27;data_type&#x27;: &lt;class &#x27;str&#x27;&gt;, &#x27;description&#x27;: &#x27;Aggregation method&#x27;, &#x27;value_set&#x27;: [&#x27;mean&#x27;, &#x27;max&#x27;, &#x27;median&#x27;, &#x27;prod&#x27;, &#x27;sum&#x27;, &#x27;std&#x27;, &#x27;var&#x27;, &#x27;argmax&#x27;, &#x27;argmin&#x27;, &#x27;first&#x27;, &#x27;last&#x27;]}, &#x27;period&#x27;: {&#x27;position&#x27;: 2, &#x27;default_value&#x27;: &#x27;MS&#x27;, &#x27;data_type&#x27;: &lt;class &#x27;str&#x27;&gt;, &#x27;description&#x27;: &#x27;Aggregation time period&#x27;}})
+Provided input values: {&#x27;ds&#x27;: &lt;class &#x27;xarray.core.dataset.Dataset&#x27;&gt;, &#x27;method&#x27;: &#x27;mean&#x27;, &#x27;period&#x27;: &#x27;1YE&#x27;, &#x27;monitor&#x27;: Monitor.NONE}
+</dd><dt><span>id :</span></dt><dd>ESACCI-LST-L3S-LST-IRCDR_-0.01deg_1MONTHLY_DAY-20201201000000-fv2.00.nc</dd><dt><span>institution :</span></dt><dd>University of Leicester</dd><dt><span>key_variables :</span></dt><dd>land_surface_temperature</dd><dt><span>keywords :</span></dt><dd>Earth Science; Land Surface; Land Temperature; Land Surface Temperature</dd><dt><span>keywords_vocabulary :</span></dt><dd>NASA Global change Master Directory (GCMD) Science Keywords</dd><dt><span>license :</span></dt><dd>ESA CCI Data Policy: free and open access</dd><dt><span>naming_authority :</span></dt><dd>le.ac.uk</dd><dt><span>platform :</span></dt><dd>Sentinel-3A</dd><dt><span>product_version :</span></dt><dd>2.00</dd><dt><span>project :</span></dt><dd>Climate Change Initiative - European Space Agency</dd><dt><span>references :</span></dt><dd>https://climate.esa.int/en/projects/land-surface-temperature</dd><dt><span>sensor :</span></dt><dd>SLSTRA</dd><dt><span>source :</span></dt><dd>ESA LST CCI IRCDR L3S V2.00</dd><dt><span>spatial_resolution :</span></dt><dd>0.01 degree</dd><dt><span>standard_name_vocabulary :</span></dt><dd>CF Standard Name Table v71</dd><dt><span>summary :</span></dt><dd>This file contains level L3S global land surface temperatures from SLSTRA. L3S data are derived from more than one sensor combined on a space and/or time grid.</dd><dt><span>time_coverage_duration :</span></dt><dd>P9133D</dd><dt><span>time_coverage_end :</span></dt><dd>2020-12-31T00:00:00</dd><dt><span>time_coverage_resolution :</span></dt><dd>P366D</dd><dt><span>time_coverage_start :</span></dt><dd>1995-12-31T00:00:00</dd><dt><span>title :</span></dt><dd>ESA LST CCI land surface temperature time series from multiple IR sensors on LEO platforms.</dd><dt><span>geospatial_bounds_crs :</span></dt><dd>CRS84</dd><dt><span>geospatial_bounds :</span></dt><dd>POLYGON((-0.6999942064285278 51.000003814697266, -0.6999942064285278 51.90999221801758, 0.49998748302459717 51.90999221801758, 0.49998748302459717 51.000003814697266, -0.6999942064285278 51.000003814697266))</dd></dl></div></li></ul></div></div>

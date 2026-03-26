@@ -1,15 +1,15 @@
 [
   {
-    "title": "LPS cloud uncertainties",
+    "title": "UKSEDS-Training",
     "description": "",
     "metadata": {},
-    "image": null,
-    "link": "external-notebooks/esa-cci/ect-training/lps-vienna-06-2025/lps-cloud-uncertainties",
+    "image": "build/_assets/previews/external_notebooks_esa-cci_ect-training_UKSEDS_03_2026_UKSEDS-Training_preview.png",
+    "link": "external-notebooks/esa-cci/ect-training/ukseds-03-2026/ukseds-training",
     "org": "esa-cci",
     "repo": "ect-training",
     "source": "submodule",
-    "path": "external_notebooks/esa-cci/ect-training/lps_vienna_06_2025/LPS_cloud_uncertainties.ipynb",
-    "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/lps_vienna_06_2025/LPS_cloud_uncertainties.ipynb&branch=main"
+    "path": "external_notebooks/esa-cci/ect-training/UKSEDS_03_2026/UKSEDS-Training.ipynb",
+    "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/UKSEDS_03_2026/UKSEDS-Training.ipynb&branch=main"
   },
   {
     "title": "LPS intermediate level ElNino",
@@ -22,6 +22,18 @@
     "source": "submodule",
     "path": "external_notebooks/esa-cci/ect-training/lps_vienna_06_2025/LPS_intermediate_level_ElNino.ipynb",
     "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/lps_vienna_06_2025/LPS_intermediate_level_ElNino.ipynb&branch=main"
+  },
+  {
+    "title": "LPS cloud uncertainties",
+    "description": "",
+    "metadata": {},
+    "image": null,
+    "link": "external-notebooks/esa-cci/ect-training/lps-vienna-06-2025/lps-cloud-uncertainties",
+    "org": "esa-cci",
+    "repo": "ect-training",
+    "source": "submodule",
+    "path": "external_notebooks/esa-cci/ect-training/lps_vienna_06_2025/LPS_cloud_uncertainties.ipynb",
+    "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/lps_vienna_06_2025/LPS_cloud_uncertainties.ipynb&branch=main"
   },
   {
     "title": "LPS Beginner",
@@ -48,18 +60,6 @@
     "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/lst_leicester_12_2024/LST_Training.ipynb&branch=main"
   },
   {
-    "title": "ESA Climate Change Competition: Forests in a Changing Climate",
-    "description": "",
-    "metadata": {},
-    "image": "build/_assets/previews/external_notebooks_esa-cci_ect-training_ESA_Climate_Change_Competition_Competition_Forests_in_a_Changing_Climate_preview.png",
-    "link": "external-notebooks/esa-cci/ect-training/esa-climate-change-competition/competition-forests-in-a-changing-climate",
-    "org": "esa-cci",
-    "repo": "ect-training",
-    "source": "submodule",
-    "path": "external_notebooks/esa-cci/ect-training/ESA_Climate_Change_Competition/Competition_Forests_in_a_Changing_Climate.ipynb",
-    "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/ESA_Climate_Change_Competition/Competition_Forests_in_a_Changing_Climate.ipynb&branch=main"
-  },
-  {
     "title": "Adaptation Futures Conference (AF2025) Training - Illustrating Climate Risk Exposure with CCI Data",
     "description": "",
     "metadata": {},
@@ -70,5 +70,17 @@
     "source": "submodule",
     "path": "external_notebooks/esa-cci/ect-training/adaptation-futures_NZ_10_2025/Adaptation-Futures_Climate-Risk-Exposure_10_2025.ipynb",
     "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/adaptation-futures_NZ_10_2025/Adaptation-Futures_Climate-Risk-Exposure_10_2025.ipynb&branch=main"
+  },
+  {
+    "title": "ESA Climate Change Competition: Forests in a Changing Climate",
+    "description": "",
+    "metadata": {},
+    "image": "build/_assets/previews/external_notebooks_esa-cci_ect-training_ESA_Climate_Change_Competition_Competition_Forests_in_a_Changing_Climate_preview.png",
+    "link": "external-notebooks/esa-cci/ect-training/esa-climate-change-competition/competition-forests-in-a-changing-climate",
+    "org": "esa-cci",
+    "repo": "ect-training",
+    "source": "submodule",
+    "path": "external_notebooks/esa-cci/ect-training/ESA_Climate_Change_Competition/Competition_Forests_in_a_Changing_Climate.ipynb",
+    "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/ESA_Climate_Change_Competition/Competition_Forests_in_a_Changing_Climate.ipynb&branch=main"
   }
 ]

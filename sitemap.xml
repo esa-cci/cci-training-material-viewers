@@ -17,6 +17,9 @@
     <loc>http://localhost:3000/external-notebooks/esa-cci/ect-training/esa-climate-change-competition/competition-forests-in-a-changing-climate</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/external-notebooks/esa-cci/ect-training/gistam-05-2026/readme</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/external-notebooks/esa-cci/ect-training/lps-vienna-06-2025/lps-beginner</loc>
   </url>
   <url>
@@ -27,5 +30,11 @@
   </url>
   <url>
     <loc>http://localhost:3000/external-notebooks/esa-cci/ect-training/lst-leicester-12-2024/lst-training</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/external-notebooks/esa-cci/ect-training/ukseds-03-2026/readme</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/external-notebooks/esa-cci/ect-training/ukseds-03-2026/ukseds-training</loc>
   </url>
 </urlset>
