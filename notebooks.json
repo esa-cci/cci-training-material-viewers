@@ -12,16 +12,28 @@
     "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/lst_leicester_12_2024/LST_Training.ipynb&branch=main"
   },
   {
-    "title": "Adaptation Futures Conference (AF2025) Training - Illustrating Climate Risk Exposure with CCI Data",
+    "title": "ESA Climate Change Competition: Forests in a Changing Climate",
     "description": "",
     "metadata": {},
-    "image": "build/_assets/previews/external_notebooks_esa-cci_ect-training_adaptation-futures_NZ_10_2025_Adaptation-Futures_Climate-Risk-Exposure_10_2025_preview.png",
-    "link": "external-notebooks/esa-cci/ect-training/adaptation-futures-nz-10-2025/adaptation-futures-climate-risk-exposure-10-2025",
+    "image": "build/_assets/previews/external_notebooks_esa-cci_ect-training_ESA_Climate_Change_Competition_Competition_Forests_in_a_Changing_Climate_preview.png",
+    "link": "external-notebooks/esa-cci/ect-training/esa-climate-change-competition/competition-forests-in-a-changing-climate",
     "org": "esa-cci",
     "repo": "ect-training",
     "source": "submodule",
-    "path": "external_notebooks/esa-cci/ect-training/adaptation-futures_NZ_10_2025/Adaptation-Futures_Climate-Risk-Exposure_10_2025.ipynb",
-    "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/adaptation-futures_NZ_10_2025/Adaptation-Futures_Climate-Risk-Exposure_10_2025.ipynb&branch=main"
+    "path": "external_notebooks/esa-cci/ect-training/ESA_Climate_Change_Competition/Competition_Forests_in_a_Changing_Climate.ipynb",
+    "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/ESA_Climate_Change_Competition/Competition_Forests_in_a_Changing_Climate.ipynb&branch=main"
+  },
+  {
+    "title": "\ud83d\udef0\ufe0f CCI Snow",
+    "description": "",
+    "metadata": {},
+    "image": "build/_assets/previews/external_notebooks_esa-cci_ect-training_PISCO_cryosphere_08_2026_PISCO_cryosphere_training_preview.png",
+    "link": "external-notebooks/esa-cci/ect-training/pisco-cryosphere-08-2026/pisco-cryosphere-training",
+    "org": "esa-cci",
+    "repo": "ect-training",
+    "source": "submodule",
+    "path": "external_notebooks/esa-cci/ect-training/PISCO_cryosphere_08_2026/PISCO_cryosphere_training.ipynb",
+    "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/PISCO_cryosphere_08_2026/PISCO_cryosphere_training.ipynb&branch=main"
   },
   {
     "title": "UKSEDS-Training",
@@ -34,6 +46,42 @@
     "source": "submodule",
     "path": "external_notebooks/esa-cci/ect-training/UKSEDS_03_2026/UKSEDS-Training.ipynb",
     "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/UKSEDS_03_2026/UKSEDS-Training.ipynb&branch=main"
+  },
+  {
+    "title": "GISTAM Training - Monitoring wildfires with satellite-derived climate data",
+    "description": "",
+    "metadata": {},
+    "image": "build/_assets/previews/external_notebooks_esa-cci_ect-training_GISTAM_05_2026_GISTAM-Training_preview.png",
+    "link": "external-notebooks/esa-cci/ect-training/gistam-05-2026/gistam-training",
+    "org": "esa-cci",
+    "repo": "ect-training",
+    "source": "submodule",
+    "path": "external_notebooks/esa-cci/ect-training/GISTAM_05_2026/GISTAM-Training.ipynb",
+    "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/GISTAM_05_2026/GISTAM-Training.ipynb&branch=main"
+  },
+  {
+    "title": "GISTAM AUS-generates impacts pressures",
+    "description": "",
+    "metadata": {},
+    "image": "build/_assets/previews/external_notebooks_esa-cci_ect-training_GISTAM_05_2026_GISTAM_AUS-generates_impacts_pressures_preview.png",
+    "link": "external-notebooks/esa-cci/ect-training/gistam-05-2026/gistam-aus-generates-impacts-pressures",
+    "org": "esa-cci",
+    "repo": "ect-training",
+    "source": "submodule",
+    "path": "external_notebooks/esa-cci/ect-training/GISTAM_05_2026/GISTAM_AUS-generates_impacts_pressures.ipynb",
+    "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/GISTAM_05_2026/GISTAM_AUS-generates_impacts_pressures.ipynb&branch=main"
+  },
+  {
+    "title": "LPS intermediate level ElNino",
+    "description": "",
+    "metadata": {},
+    "image": "build/_assets/previews/external_notebooks_esa-cci_ect-training_lps_vienna_06_2025_LPS_intermediate_level_ElNino_preview.png",
+    "link": "external-notebooks/esa-cci/ect-training/lps-vienna-06-2025/lps-intermediate-level-elnino",
+    "org": "esa-cci",
+    "repo": "ect-training",
+    "source": "submodule",
+    "path": "external_notebooks/esa-cci/ect-training/lps_vienna_06_2025/LPS_intermediate_level_ElNino.ipynb",
+    "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/lps_vienna_06_2025/LPS_intermediate_level_ElNino.ipynb&branch=main"
   },
   {
     "title": "LPS cloud uncertainties",
@@ -60,51 +108,15 @@
     "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/lps_vienna_06_2025/LPS_Beginner.ipynb&branch=main"
   },
   {
-    "title": "LPS intermediate level ElNino",
+    "title": "Adaptation Futures Conference (AF2025) Training - Illustrating Climate Risk Exposure with CCI Data",
     "description": "",
     "metadata": {},
-    "image": "build/_assets/previews/external_notebooks_esa-cci_ect-training_lps_vienna_06_2025_LPS_intermediate_level_ElNino_preview.png",
-    "link": "external-notebooks/esa-cci/ect-training/lps-vienna-06-2025/lps-intermediate-level-elnino",
+    "image": "build/_assets/previews/external_notebooks_esa-cci_ect-training_adaptation-futures_NZ_10_2025_Adaptation-Futures_Climate-Risk-Exposure_10_2025_preview.png",
+    "link": "external-notebooks/esa-cci/ect-training/adaptation-futures-nz-10-2025/adaptation-futures-climate-risk-exposure-10-2025",
     "org": "esa-cci",
     "repo": "ect-training",
     "source": "submodule",
-    "path": "external_notebooks/esa-cci/ect-training/lps_vienna_06_2025/LPS_intermediate_level_ElNino.ipynb",
-    "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/lps_vienna_06_2025/LPS_intermediate_level_ElNino.ipynb&branch=main"
-  },
-  {
-    "title": "GISTAM AUS-generates impacts pressures RL",
-    "description": "",
-    "metadata": {},
-    "image": "build/_assets/previews/external_notebooks_esa-cci_ect-training_GISTAM_05_2026_GISTAM_AUS-generates_impacts_pressures_RL_preview.png",
-    "link": "external-notebooks/esa-cci/ect-training/gistam-05-2026/gistam-aus-generates-impacts-pressures-rl",
-    "org": "esa-cci",
-    "repo": "ect-training",
-    "source": "submodule",
-    "path": "external_notebooks/esa-cci/ect-training/GISTAM_05_2026/GISTAM_AUS-generates_impacts_pressures_RL.ipynb",
-    "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/GISTAM_05_2026/GISTAM_AUS-generates_impacts_pressures_RL.ipynb&branch=main"
-  },
-  {
-    "title": "GISTAM 2026 Training - Monitoring climate change with satellite-derived data",
-    "description": "",
-    "metadata": {},
-    "image": "build/_assets/previews/external_notebooks_esa-cci_ect-training_GISTAM_05_2026_GISTAM-Training_preview.png",
-    "link": "external-notebooks/esa-cci/ect-training/gistam-05-2026/gistam-training",
-    "org": "esa-cci",
-    "repo": "ect-training",
-    "source": "submodule",
-    "path": "external_notebooks/esa-cci/ect-training/GISTAM_05_2026/GISTAM-Training.ipynb",
-    "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/GISTAM_05_2026/GISTAM-Training.ipynb&branch=main"
-  },
-  {
-    "title": "ESA Climate Change Competition: Forests in a Changing Climate",
-    "description": "",
-    "metadata": {},
-    "image": "build/_assets/previews/external_notebooks_esa-cci_ect-training_ESA_Climate_Change_Competition_Competition_Forests_in_a_Changing_Climate_preview.png",
-    "link": "external-notebooks/esa-cci/ect-training/esa-climate-change-competition/competition-forests-in-a-changing-climate",
-    "org": "esa-cci",
-    "repo": "ect-training",
-    "source": "submodule",
-    "path": "external_notebooks/esa-cci/ect-training/ESA_Climate_Change_Competition/Competition_Forests_in_a_Changing_Climate.ipynb",
-    "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/ESA_Climate_Change_Competition/Competition_Forests_in_a_Changing_Climate.ipynb&branch=main"
+    "path": "external_notebooks/esa-cci/ect-training/adaptation-futures_NZ_10_2025/Adaptation-Futures_Climate-Risk-Exposure_10_2025.ipynb",
+    "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/adaptation-futures_NZ_10_2025/Adaptation-Futures_Climate-Risk-Exposure_10_2025.ipynb&branch=main"
   }
 ]
