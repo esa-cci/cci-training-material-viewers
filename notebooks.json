@@ -24,7 +24,7 @@
     "gitpuller": "https://workspace.climate.hub-otc.eox.at/hub/user-redirect/git-pull?repo=https://github.com/esa-cci/ect-training&urlpath=lab/tree/ect-training/ESA_Climate_Change_Competition/Competition_Forests_in_a_Changing_Climate.ipynb&branch=main"
   },
   {
-    "title": "\ud83d\udef0\ufe0f CCI Snow",
+    "title": "CCI PISCO Training: Monitoring changing climate in the cryosphere with satellite-derived data",
     "description": "",
     "metadata": {},
     "image": "build/_assets/previews/external_notebooks_esa-cci_ect-training_PISCO_cryosphere_08_2026_PISCO_cryosphere_training_preview.png",
